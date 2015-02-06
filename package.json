@@ -1,0 +1,22 @@
+{
+    "name": "Alpha-of-Genesis",
+    "version": "0.0.1",
+    "description": "A creative project currently under construction.",
+    "author": "James Y. Rauhut <james@seejamescode.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yepnamesjames/Alpha-of-Genesis"
+    },
+    "bugs": {
+        "url": "https://github.com/yepnamesjames/Alpha-of-Genesis/issues"
+    },
+    "dependencies": {
+        "gulp": "*",
+        "gulp-minify-css": "*",
+        "gulp-rename": "*",
+        "gulp-sass": "*",
+        "gulp-watch": "*"
+    },
+    "analyze": true,
+    "license": "MIT"
+}
