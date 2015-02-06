@@ -15,7 +15,8 @@
         "gulp-minify-css": "*",
         "gulp-rename": "*",
         "gulp-sass": "*",
-        "gulp-watch": "*"
+        "gulp-watch": "*",
+        "gulp-connect": "*"
     },
     "analyze": true,
     "license": "MIT"
