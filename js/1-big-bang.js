@@ -2,7 +2,21 @@
 var scene, camera, renderer, stats, stats2, clock;
 
 // Used in initParticles()
-var emitter, particleGroup;
+var emitter, particleGroup, pool,
+    pos = new THREE.Vector3(),
+    emitterSettings = {
+        type: 'sphere',
+        positionSpread: new THREE.Vector3(0, 0, 0),
+        radius: 1,
+        speed: 10,
+        sizeStart: 1,
+        sizeEnd: 1,
+        opacityStart: 1,
+        opacityEnd: 1,
+        colorStart: new THREE.Color('white'),
+        colorEnd: new THREE.Color('white'),
+        particleCount: 1000
+    };
 
 var mouseX = 0, mouseY = 0;
 
@@ -33,40 +47,31 @@ function init() {
 // Create particle group and emitter
 function initParticles() {
     particleGroup = new SPE.Group({
-        texture: THREE.ImageUtils.loadTexture('images/particle.png'),
-        maxAge: 2,
-        blending: THREE.AdditiveBlending
-    });
+                    texture: THREE.ImageUtils.loadTexture('images/particle.png'),
+                    maxAge: 60
+                });
 
-    emitter = new SPE.Emitter({
-        positionSpread: new THREE.Vector3(100, 100, 100),
+    particleGroup.addPool( 1, emitterSettings, false );
 
-        acceleration: new THREE.Vector3(0, 0, 10),
-
-        velocity: new THREE.Vector3(0, 0, 10),
-
-        colorStart: new THREE.Color('white'),
-        colorEnd: new THREE.Color('white'),
-        sizeStart: 1,
-        sizeEnd: 1,
-        opacityStart: 0,
-        opacityMiddle: 1,
-        opacityEnd: 0,
-
-        particleCount: 1000
-    });
-
-    particleGroup.addEmitter( emitter );
+    // Add particle group to scene.
     scene.add( particleGroup.mesh );
 }
 
-
+// Generate a random number between -size/2 and +size/2
+function rand( size ) {
+    return size * Math.random() - (size/2);
+}
+// Trigger an explosion
+function createExplosion() {
+    var num = 1000;
+    particleGroup.triggerPoolEmitter( 1, (0, 0, 0) );
+}
 
 function animate() {
     requestAnimationFrame( animate );
 
     // Using a fixed time-step here to avoid pauses
-    render( 0.0016 );
+    render();
     stats.update();
 }
 
@@ -132,3 +137,6 @@ init();
 initParticles();
 
 setTimeout(animate, 0);
+
+// Add a mousedown listener. When mouse is clicked, a new explosion will be created.
+setTimeout(function () {createExplosion()}, 1000);
