@@ -17,6 +17,7 @@
   "dependencies": {
     "jquery": "*",
     "three.js": "*",
-    "normalize.css": "*"
+    "normalize.css": "*",
+    "ShaderParticleEngine": "git://github.com/squarefeet/ShaderParticleEngine"
   }
 }

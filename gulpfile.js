@@ -33,7 +33,8 @@ gulp.task('js', function() {
 gulp.task('component_js', function() {
     return gulp.src([
                      'bower_components/jquery/dist/jquery.js',
-                     'bower_components/three.js/three.js'
+                     'bower_components/three.js/three.js',
+                     'bower_components/ShaderParticleEngine/build/ShaderParticles.js'
                      ])
         .pipe(gulp.dest('static/js'));
 });
