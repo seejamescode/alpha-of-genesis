@@ -4,18 +4,45 @@ var scene, camera, renderer, stats, stats2, clock;
 // Used in initParticles()
 var emitter, particleGroup, pool,
     pos = new THREE.Vector3(),
-    emitterSettings = {
+        emitterSettings = {
         type: 'sphere',
-        positionSpread: new THREE.Vector3(0, 0, 0),
-        radius: 1,
-        speed: 10,
+        particleCount: 500,
+        position: new THREE.Vector3( 0, 0, 0 ),
+        positionSpread: new THREE.Vector3( 0, 0, 0 ),
+        radius: 0.001,
+        radiusSpread: 0,
+        radiusSpreadClamp: 0,
+        radiusScale: new THREE.Vector3( 1, 1, 1 ),
+        speed: 1,
+        speedSpread: 5,
         sizeStart: 1,
+        sizeStartSpread: 0,
+        sizeMiddle: 1,
+        sizeMiddleSpread: 0,
         sizeEnd: 1,
+        sizeEndSpread: 0,
+        angleStart: 0,
+        angleStartSpread: 0,
+        angleMiddle: 0,
+        angleMiddleSpread: 0,
+        angleEnd: 0,
+        angleEndSpread: 0,
+        angleAlignVelocity: false,
+        colorStart: new THREE.Color( 0xffffff ),
+        colorStartSpread: new THREE.Vector3( 0, 0, 0 ),
+        colorMiddle: new THREE.Color( 0xffffff ),
+        colorMiddleSpread: new THREE.Vector3( 0, 0, 0 ),
+        colorEnd: new THREE.Color( 0x000000 ),
+        colorEndSpread: new THREE.Vector3( 0, 0, 0 ),
         opacityStart: 1,
+        opacityStartSpread: 0,
+        opacityMiddle: 1,
+        opacityMiddleSpread: 0,
         opacityEnd: 1,
-        colorStart: new THREE.Color('white'),
-        colorEnd: new THREE.Color('white'),
-        particleCount: 1000
+        opacityEndSpread: 0,
+        duration: 0.5,
+        alive: 1,
+        isStatic: 0
     };
 
 var mouseX = 0, mouseY = 0;
@@ -48,7 +75,14 @@ function init() {
 function initParticles() {
     particleGroup = new SPE.Group({
                     texture: THREE.ImageUtils.loadTexture('images/particle.png'),
-                    maxAge: 60
+                    maxAge: 60,
+                    hasPerspective: 1,
+                    colorize: 0,
+                    transparent: 1,
+                    alphaTest: 0.5,
+                    depthWrite: false,
+                    depthTest: true,
+                    blending: THREE.AdditiveBlending
                 });
 
     particleGroup.addPool( 1, emitterSettings, false );
