@@ -1,10 +1,25 @@
 // variables used in init()
 var scene, camera, renderer, stats, stats2, clock;
-var particleEmitter, particleGroup
+var particleEmitter, particleEmitter2, particleGroup
 var mouseX = 0, mouseY = 0;
+
+var frame01end = false;
+var child = document.getElementById("frame01");
+var parent = document.getElementById("container");
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
+
+var step = 0;
+
+var sphereGeometry = new THREE.SphereGeometry(0.4, 20, 20);
+var sphereMaterial = new THREE.MeshBasicMaterial({color: 0x7777ff});
+var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+// position the sphere
+sphere.position.x = 0;
+sphere.position.y = 0;
+sphere.position.z = 0;
 
 function init() {
     scene = new THREE.Scene();
@@ -39,7 +54,6 @@ function initParticles() {
         blending: THREE.AdditiveBlending
     });
 
-    // Used in initParticles()
     particleEmitter = new SPE.Emitter({
         type: 'sphere',
         particleCount: 1000,
@@ -86,25 +100,33 @@ function initParticles() {
 
     // Add particle group to scene.
     scene.add( particleGroup.mesh );
+    scene.add( sphere );
 }
 
 function animate() {
-    requestAnimationFrame( animate );
+    step += 1;
+    sphere.position.z = + .1 * step;
 
     // Use a fixed time-step here to avoid gaps
     render( clock.getDelta() );
-
+    requestAnimationFrame( animate );
     stats.update();
+
+    if (frame01end === false && sphere.position.z > camera.position.z) {
+        frame01end = true;
+        console.log("This is when we should delete");
+    };
 }
 
 function render( dt ) {
     particleGroup.tick( dt );
     renderer.render( scene, camera );
 
-    camera.position.x = ( mouseX - camera.position.x ) * 0.01;
-    camera.position.y = ( - mouseY - camera.position.y ) * 0.01;
+    // camera.position.x = ( mouseX - camera.position.x ) * 0.01;
+    // camera.position.y = ( - mouseY - camera.position.y ) * 0.01;
 
     camera.lookAt( scene.position );
+
 }
 
 function onDocumentMouseMove( event ) {
