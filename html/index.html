@@ -6,18 +6,31 @@
         <title>Big Bang</title>
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/glitchText.css">
+        
         <script src="js/jquery.js"></script>
         <script src="js/three.js"></script>
         <script src='js/threex.windowresize.js'></script>
         <script src="js/Detector.js"></script>
         <script src="js/stats.min.js"></script>
         <script src="js/ShaderParticles.js"></script>
+        <script src="js/watch.js"></script>
     </head>
     <body>
         <div id="container">
             <div id="frame01">
-                    <script src="js/frame01-bigBang.js"></script>
+                <script src="js/frame01-bigBang.js"></script>
+            </div>
+            <div id="frame02" class="displayNone">
+                <div class="glitch-container">
+                    <div class="glitch-box">
+                        <div class="glitch" data-text="In the beginning God created the heaven and the earth.">
+                            <span>In the beginning God created the heaven and the earth.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <script src="js/steps.js"></script>
     </body>
-</html>              
+</html>

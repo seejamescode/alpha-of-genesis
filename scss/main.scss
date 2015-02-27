@@ -2,9 +2,15 @@ body, #container {
     height: 100%;
     width: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 canvas {
     width: 100%;
-    height: auto;
+    height: 100%;
+    display: block;
+}
+
+.displayNone {
+    display: none;
 }
