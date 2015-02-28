@@ -123,8 +123,8 @@ function step01() {
         particleGroup.tick( dt );
         renderer.render( scene, camera );
 
-/*        camera.position.x = ( mouseX - camera.position.x ) * 0.005;
-        camera.position.y = ( - mouseY - camera.position.y ) * 0.005;*/
+        camera.position.x = ( mouseX - camera.position.x ) * 0.0008;
+        camera.position.y = ( - mouseY - camera.position.y ) * 0.0008;
 
         camera.lookAt( scene.position );
 
