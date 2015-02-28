@@ -37,6 +37,7 @@ function step01() {
 
         stats.domElement.style.position = 'absolute';
         stats.domElement.style.top = '0';
+        stats.domElement.style.opacity = '0';
 
         document.body.appendChild( renderer.domElement );
         document.body.appendChild( stats.domElement );
@@ -113,7 +114,7 @@ function step01() {
         requestAnimationFrame( animate );
         stats.update();
 
-        if (obj.end === false && sphere.position.z > (camera.position.z - 0.5)) {
+        if (obj.end === false && sphere.position.z >= (camera.position.z - 0.5)) {
             obj.end = true;
         };
     }
@@ -122,8 +123,8 @@ function step01() {
         particleGroup.tick( dt );
         renderer.render( scene, camera );
 
-        // camera.position.x = ( mouseX - camera.position.x ) * 0.005;
-        // camera.position.y = ( - mouseY - camera.position.y ) * 0.005;
+/*        camera.position.x = ( mouseX - camera.position.x ) * 0.005;
+        camera.position.y = ( - mouseY - camera.position.y ) * 0.005;*/
 
         camera.lookAt( scene.position );
 

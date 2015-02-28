@@ -1,26 +1,36 @@
 .glitch-container {
-  background: white;
-  font-family: sans-serif;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  position: absolute;
-  display: table; }
+    background: white;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    display: table;
+}
 
 .glitch-box {
-  display: table-cell;
-  vertical-align: middle; }
+    display: table-cell;
+    vertical-align: middle;
+}
 
 .glitch {
-  color: black;
-  font-size: 50px;
-  position: relative;
-  margin: 0 auto;
-  max-width: 500px; }
-  @media (max-width: 600px) {
+    color: black;
+    font-size: 50px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px; 
+    opacity: 0;
+    transition: opacity .25s ease-in;
+   -moz-transition: opacity .25s ease-in;
+   -webkit-transition: opacity .25s ease-in;
+}
+
+@media (max-width: 600px) {
     .glitch {
-      font-size: 25px;
-      max-width: 280px; } }
+        font-size: 25px;
+        max-width: 280px;
+    }
+}
 
 @-webkit-keyframes noise-anim {
   0% {

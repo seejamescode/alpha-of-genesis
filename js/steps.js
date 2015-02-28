@@ -11,8 +11,11 @@ watch(step, "current", function() {
             step01();
             break;
         case 2:
-            $('#frame02').removeClass("displayNone");
+            $('#frame02').css("opacity", "1");
             $('canvas').remove();
+            setTimeout( function() {
+                $('#frame02 .glitch').css("opacity", "1");
+            }, 200);
             step02();
             break;
     };
