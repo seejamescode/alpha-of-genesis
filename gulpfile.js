@@ -36,7 +36,8 @@ gulp.task('component_js', function() {
                      'bower_components/three.js/three.js',
                      'bower_components/threex.windowresize/threex.windowresize.js',
                      'bower_components/ShaderParticleEngine/build/ShaderParticles.js',
-                     'bower_components/watch/src/watch.js'
+                     'bower_components/watch/src/watch.js',
+                     'bower_components/flat-surface-shader/deploy/fss.js'
                      ])
         .pipe(gulp.dest('static/js'));
 });

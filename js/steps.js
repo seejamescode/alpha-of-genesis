@@ -18,6 +18,9 @@ watch(step, "current", function() {
             }, 200);
             step02();
             break;
+        case 3:
+        
+            break;
     };
 });
 
