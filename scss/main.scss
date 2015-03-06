@@ -36,6 +36,35 @@ canvas {
     position: absolute;
     left: 10%;
     top: 30%;
+
+    transition: left 5s ease-in;
+    -moz-transition: left 5s ease-in;
+    -webkit-transition: left 5s ease-in;
+}
+
+#sun-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#sun-glow {
+    width: 100%;
+    padding-bottom: 100%;
+    margin-top: -50%;
+    left: 100%;
+    position: absolute;
+    background-image: url("../images/sunGlow.svg");
+    background-repeat: no-repeat;
+
+    transition: left 5s ease-in;
+   -moz-transition: left 5s ease-in;
+   -webkit-transition: left 5s ease-in;
+}
+
+#background-container2 {
+    margin: 10%;
+    width: 80%;
+    height: 80%;
 }
 
 #frame03 .glitch-box {
@@ -46,13 +75,20 @@ canvas {
     height: 30%;
 }
 
+#sun-glow .glitch-box {
+    width: 100%;
+    left: 0;
+    top: 45%;
+    z-index: 2;
+}
+
 .background-container {
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-#earth-container canvas {
+#frame03 canvas {
     border-radius:50%;
     width: 100%;
     height: 100%;

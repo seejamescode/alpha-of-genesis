@@ -18,7 +18,7 @@ watch(step, "current", function() {
                 $('#frame02 .glitch').css("opacity", "1");
             }, 200);
             step02();
-            $( "#frame02 .glitch" ).click(function() {
+            $( "#frame02 .glitch" ).on('click touchstart', function () {
                 step.current = 3;
             });            
             break;
@@ -29,8 +29,20 @@ watch(step, "current", function() {
             setTimeout( function() {
                 $('#frame03').css("opacity", "1");
             }, 500);
+            $( "#frame03 .glitch" ).on('click touchstart', function () {
+                step.current = 4;
+            });  
+            break;
+        case 4:
+            step04();
+            $('#sun-glow').css("left", "0");
+            $('#frame03 > .glitch-box > .glitch').css("opacity", "0");
+            setTimeout( function() {
+                $('#frame03 > .glitch-box').css("Display", "None");
+            }, 250);
+            $('#earth-container').css("left", "32.5%");
             break;
     };
 });
 
-step.current = 0;
+step.current = 3;
