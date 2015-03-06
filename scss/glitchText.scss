@@ -15,6 +15,7 @@
 
 .glitch {
     color: black;
+    cursor: pointer; 
     font-size: 50px;
     position: relative;
     margin: 0 auto;
@@ -25,10 +26,23 @@
    -webkit-transition: opacity .25s ease-in;
 }
 
-@media (max-width: 600px) {
+.inverse {
+    color: #fff;
+    background-color: #000;
+    opacity: 1;
+    font-size: 30px;
+}
+
+@media (max-width: 800px) {
     .glitch {
         font-size: 25px;
         max-width: 280px;
+    }
+}
+
+@media (max-width: 800px) {
+    .inverse {
+        font-size: 15px;
     }
 }
 
@@ -197,3 +211,13 @@
   -moz-animation: noise-anim-2 4s infinite linear alternate-reverse;
   -o-animation: noise-anim-2 4s infinite linear alternate-reverse;
   animation: noise-anim-2 4s infinite linear alternate-reverse; }
+
+.inverse:before {
+  text-shadow: 0.5px 0 black;
+  color: white;
+  background: black; }
+
+  .inverse:after {
+  text-shadow: -0.5px 0 black;
+  color: white;
+  background: black; }

@@ -15,18 +15,38 @@
         <script src="js/stats.min.js"></script>
         <script src="js/ShaderParticles.js"></script>
         <script src="js/watch.js"></script>
+        <script src="js/fss.js"></script>
     </head>
     <body>
         <div id="container">
             <div id="frame01">
                 <script src="js/frame01-bigBang.js"></script>
             </div>
-            <div id="frame02">
+            <div id="frame02" class="frame">
                 <div class="glitch-container">
                     <div class="glitch-box">
                         <div class="glitch displayNone" data-text="In the beginning God created the heaven and the earth.">
                             <span>In the beginning God created the heaven and the earth.</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="frame03" class="frame">
+                <script src="js/frame03-earth.js"></script>
+
+                <div id="earth-container">
+                    <div id="background-container" class="background-container">
+                        <div id="background-output" class="background-output"></div>
+                    </div>
+                </div>
+
+                <div class="glitch-box">
+                    <div class="glitch displayNone inverse" data-text="And the earth was without form, and void; and darkness was upon the face of the deep.">
+                        <span>And the earth was without form, and void; and darkness was upon the face of the deep.</span>
+                    </div>
+                    <br>
+                    <div class="glitch displayNone inverse" data-text="And the Spirit of God moved upon the face of the waters.">
+                        <span>And the Spirit of God moved upon the face of the waters.</span>
                     </div>
                 </div>
             </div>

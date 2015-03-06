@@ -11,17 +11,26 @@ watch(step, "current", function() {
             step01();
             break;
         case 2:
+            $('#frame02').css("display", "initial");
             $('#frame02').css("opacity", "1");
-            $('canvas').remove();
+            $('canvas').first().remove();
             setTimeout( function() {
                 $('#frame02 .glitch').css("opacity", "1");
             }, 200);
             step02();
+            $( "#frame02 .glitch" ).click(function() {
+                step.current = 3;
+            });            
             break;
         case 3:
-        
+            $('#frame03').css("display", "table");
+            step03();
+            $('#frame02 .glitch').css("opacity", "0");
+            setTimeout( function() {
+                $('#frame03').css("opacity", "1");
+            }, 500);
             break;
     };
 });
 
-step.current = 1;
+step.current = 0;
