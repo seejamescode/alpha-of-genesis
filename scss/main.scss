@@ -31,37 +31,57 @@ canvas {
 }
 
 #earth-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#earth {
     width: 30%;
     padding-bottom: 30%;
     position: absolute;
     left: 10%;
-    top: 30%;
+    margin-top: -15%;
 
-    transition: left 5s ease-in;
-    -moz-transition: left 5s ease-in;
-    -webkit-transition: left 5s ease-in;
+    transition: left 7s ease-in;
+    -moz-transition: left 7s ease-in;
+    -webkit-transition: left 7s ease-in;
 }
 
-#sun-container {
+.sun-container {
     display: table-cell;
     vertical-align: middle;
 }
 
 #sun-glow {
-    width: 100%;
-    padding-bottom: 100%;
-    margin-top: -50%;
+    width: 80%;
+    padding-bottom: 80%;
+    margin-top: -40%;
     left: 100%;
     position: absolute;
     background-image: url("../images/sunGlow.svg");
     background-repeat: no-repeat;
-
-    transition: left 5s ease-in;
-   -moz-transition: left 5s ease-in;
-   -webkit-transition: left 5s ease-in;
 }
 
-#background-container2 {
+.sun-slow {
+   transition: left 7s ease-in;
+   -moz-transition: left 7s ease-in;
+   -webkit-transition: left 7s ease-in; 
+}
+
+.sun-fast {
+   transition: left 3.5s ease-in;
+   -moz-transition: left 3.5s ease-in;
+   -webkit-transition: left 3.5s ease-in; 
+}
+
+#sun-container2 #sun-glow {
+    width: 25%;
+    padding-bottom: 25%;
+    margin-top: -20%;
+    left: -25%;
+}
+
+#background-container2, #background-container3 {
     margin: 10%;
     width: 80%;
     height: 80%;
@@ -71,8 +91,10 @@ canvas {
     position: absolute;
     top: 30%;
     right: 10%;
+}
+
+#step03 {
     width: 40%;
-    height: 30%;
 }
 
 #sun-glow .glitch-box {
@@ -99,4 +121,11 @@ canvas {
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+#step05 {
+    height: initial;
+    left: 30%;
+    width: 35%;
+    display: none;
 }
