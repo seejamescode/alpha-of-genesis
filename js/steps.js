@@ -1,8 +1,27 @@
-var step = { current: 0};
+var step = { current: -1 };
+
+//Add Modernizr test
+Modernizr.addTest('isiOS', function(){
+    return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
+});
+
+//usage
+if (Modernizr.isiOS) {
+    $('#frame00 #start video').css("display", "none");
+}
 
 watch(step, "current", function() {
     console.log("Changed step to " + step.current);
     switch(step.current) {
+        case 0:
+            $( "#frame00 #start" ).on('click touchstart', function () {
+                $('#frame00').css("opacity", "0");
+                setTimeout( function() {
+                    $('#frame00').css("display", "none");
+                    step.current = 1;
+                }, 2000);
+            });
+            break;
         case 1:
             step01();
             break;
@@ -60,4 +79,4 @@ watch(step, "current", function() {
     };
 });
 
-step.current = 1;
+step.current = 0;

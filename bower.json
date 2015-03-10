@@ -19,6 +19,7 @@
     "three.js": "*",
     "normalize.css": "*",
     "watch": "*",
+    "modernizr": "*",
     "threex.windowresize": "git://github.com/jeromeetienne/threex.windowresize",
     "ShaderParticleEngine": "git://github.com/squarefeet/ShaderParticleEngine",
     "flat-surface-shader": "git://github.com/wagerfield/flat-surface-shader"

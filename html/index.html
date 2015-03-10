@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/glitchText.css">
         
         <script src="js/jquery.js"></script>
+        <script src="js/modernizr.js"></script>
         <script src="js/three.js"></script>
         <script src='js/threex.windowresize.js'></script>
         <script src="js/Detector.js"></script>
@@ -19,6 +20,17 @@
     </head>
     <body>
         <div id="container">
+            <div id ="frame00" class="frame">
+                <div id="start">
+                    <video autoplay loop poster="images/bgVideoPoster.jpg">
+                        <source src="images/bgVideo.webm" type="video/webm">
+                        <source src="images/bgVideo.mp4" type="video/mp4">
+                    </video>
+                    <img id="mobilePoster" src="images/bgVideoPoster.jpg">
+                    <img id="logo" src="images/Alpha-of-Genesis-Logo-transparentBlackOutside.svg">
+                    <img id="logoFill" src="images/Alpha-of-Genesis-Logo-transparentBlackOutsideFill.svg">
+                </div>
+            </div>
             <div id="frame01">
                 <script src="js/frame01-bigBang.js"></script>
             </div>
