@@ -23,7 +23,7 @@ watch(step, "current", function() {
             });
             break;
         case 1:
-            step01();
+            initBigBang();
             break;
         case 2:
             $('#frame02').css("display", "initial");
@@ -39,7 +39,7 @@ watch(step, "current", function() {
             break;
         case 3:
             $('#frame03').css("display", "table");
-            step03();
+            initSurface('', '#ff0000', '#ff0000', 0.002, '#000000', '#ffffff');
             $('#frame02 .glitch').css("opacity", "0");
             setTimeout( function() {
                 $('#frame02').css("display", "none");
@@ -50,29 +50,31 @@ watch(step, "current", function() {
             });  
             break;
         case 4:
-            step04(2);
-            $('#sun-container #sun-glow').css("left", "10%");
+            initSurface(2, '#ffe100', '#ffe100', 0.0004, '#666666', '#cacaca');
+            $('#sun-container #sun-glow').addClass("sun-slow");
             $('#frame03 > .glitch-box > .glitch').css("opacity", "0");
             setTimeout( function() {
                 $('#frame03 > .glitch-box').css("display", "done");
             }, 250);
-            $('#earth').css("left", "32.5%");
+            $('#earth').addClass("earth-step04");
             $( "#sun-container #sun-glow .glitch" ).on('click touchstart', function () {
+                $('canvas').first().remove();
+                initSurface('', '#555555', '#ffffff', 0.0001, '#000000', '#b34d4d');
                 step.current = 5;
             }); 
             break;
         case 5:
-            step04(3);
-            $('#sun-container #sun-glow').addClass("sun-fast");
+            initSurface(3, '#ffe100', '#ffe100', 0.0004, '#666666', '#cacaca');
             $('#sun-container #sun-glow').removeClass("sun-slow");
-            $('#earth').css("left", "67.5%");
-            $('#sun-container #sun-glow').css("left", "-100%");
+            $('#sun-container #sun-glow').addClass("sun-fast");
+            $('#earth').removeClass("earth-step04");
+            $('#earth').addClass("earth-step05");
             setTimeout( function() {
-                $('#sun-container2 #sun-glow').css("left", "2.5%");
+                $('#sun-container2 #sun-glow').addClass("sun-fast");
                 $('#sun-container').css("display", "none");
+                $('#step05-verses').css("display", "initial");
                 setTimeout( function() {
-                    $('#step05').css("display", "initial");
-                    $('#step05 .glitch').css("opacity", "1");
+                    $('#step05-verses .glitch').css("opacity", "1");
                 }, 3500);
             }, 3500);
             break;

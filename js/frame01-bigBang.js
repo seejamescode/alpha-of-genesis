@@ -1,6 +1,6 @@
-function step01() {
+function initBigBang() {
     // variables used in init()
-    var scene, camera, renderer, stats, stats2, clock;
+    var scene, camera, renderer, clock;
     var particleEmitter, particleEmitter2, particleGroup
     var mouseX = 0, mouseY = 0;
 
@@ -32,15 +32,9 @@ function step01() {
         renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.setClearColor(0x000000);
 
-        stats = new Stats();
         clock = new THREE.Clock();
 
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.top = '0';
-        stats.domElement.style.opacity = '0';
-
-        document.body.appendChild( renderer.domElement );
-        document.body.appendChild( stats.domElement );
+        document.getElementById('frame01').appendChild( renderer.domElement );
     }
 
     function initParticles() {
@@ -112,7 +106,6 @@ function step01() {
         // Use a fixed time-step here to avoid gaps
         render( clock.getDelta() );
         requestAnimationFrame( animate );
-        stats.update();
 
         if (obj.end === false && sphere.position.z >= (camera.position.z - 0.5)) {
             obj.end = true;

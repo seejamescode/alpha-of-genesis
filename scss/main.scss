@@ -111,9 +111,26 @@ canvas {
     left: 10%;
     margin-top: -15%;
 
-    transition: left 7s ease-in;
-    -moz-transition: left 7s ease-in;
-    -webkit-transition: left 7s ease-in;
+    -webkit-transition: 7s ease-in;
+    transition: 7s ease-in;
+    -moz-transition: 7s ease-in;
+    -webkit-transition: 7s ease-in;
+}
+
+.earth-step04 {
+    -webkit-transform: translate(85%,0);
+    -moz-transform: translate(85%,0);
+    -o-transform: translate(85%,0);
+    -ms-transform: translate(85%,0);
+    transform: translate(85%,0);
+}
+
+.earth-step05 {
+    -webkit-transform: translate(190%,0);
+    -moz-transform: translate(190%,0);
+    -o-transform: translate(190%,0);
+    -ms-transform: translate(190%,0);
+    transform: translate(190%,0);
 }
 
 .sun-container {
@@ -132,15 +149,29 @@ canvas {
 }
 
 .sun-slow {
-   transition: left 7s ease-in;
-   -moz-transition: left 7s ease-in;
-   -webkit-transition: left 7s ease-in; 
+    -webkit-transition: 7s ease-in;
+    transition: 7s ease-in;
+    -moz-transition: 7s ease-in;
+    -webkit-transition: 7s ease-in;
+
+    -webkit-transform: translate(-112%,0);
+    -moz-transform: translate(-112%,0);
+    -o-transform: translate(-112%,0);
+    -ms-transform: translate(-112%,0);
+    transform: translate(-112%,0);
 }
 
 .sun-fast {
-   transition: left 3.5s ease-in;
-   -moz-transition: left 3.5s ease-in;
-   -webkit-transition: left 3.5s ease-in; 
+    -webkit-transition: 3.5s ease-in;
+    transition: 3.5s ease-in;
+    -moz-transition: 3.5s ease-in;
+    -webkit-transition: 3.5s ease-in;
+
+     -webkit-transform: translate(-225%,0);
+    -moz-transform: translate(-225%,0);
+    -o-transform: translate(-225%,0);
+    -ms-transform: translate(-225%,0);
+    transform: translate(-225%,0);
 }
 
 #sun-container2 #sun-glow {
@@ -150,9 +181,17 @@ canvas {
     left: -25%;
 }
 
+#sun-container2 .sun-fast {
+     -webkit-transform: translate(115%,0);
+    -moz-transform: translate(115%,0);
+    -o-transform: translate(115%,0);
+    -ms-transform: translate(115%,0);
+    transform: translate(115%,0);
+}
+
 #background-container2, #background-container3 {
     margin: 10%;
-    width: 80%;
+    width: 80.1%;
     height: 80%;
 }
 
@@ -192,9 +231,13 @@ canvas {
     position: absolute;
 }
 
-#step05 {
+#step05-verses {
     height: initial;
     left: 30%;
     width: 35%;
     display: none;
+}
+
+#step05-verses .glitch {
+    opacity: 0;
 }
