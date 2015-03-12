@@ -54,12 +54,12 @@ watch(step, "current", function() {
             $('#sun-container #sun-glow').addClass("sun-slow");
             $('#frame03 > .glitch-box > .glitch').css("opacity", "0");
             setTimeout( function() {
-                $('#frame03 > .glitch-box').css("display", "done");
+                $('#frame03 > .glitch-box').css("display", "none");
             }, 250);
             $('#earth').addClass("earth-step04");
             $( "#sun-container #sun-glow .glitch" ).on('click touchstart', function () {
                 $('canvas').first().remove();
-                initSurface('', '#555555', '#ffffff', 0.0001, '#000000', '#b34d4d');
+                initSurface('', '#555555', '#ffffff', 0.0001, '#00a4ff', '#001eff');
                 step.current = 5;
             }); 
             break;
@@ -75,10 +75,26 @@ watch(step, "current", function() {
                 $('#step05-verses').css("display", "initial");
                 setTimeout( function() {
                     $('#step05-verses .glitch').css("opacity", "1");
+                    $( ".glitch" ).on('click touchstart', function () {
+                        step.current = 6;
+                    }); 
                 }, 3500);
             }, 3500);
+            break;
+        case 6:
+            $('#step05-verses .glitch').css("opacity", "0");
+            setTimeout( function() {
+                $('#step05-verses').css("display", "none");
+                $('#earth').removeClass("earth-step05");
+                $('#earth').addClass("earth-step06");
+                $('#sun-container2 #sun-glow').addClass("sun-out");
+                setTimeout( function() {
+                    $('#sun-container2').css("display", "none");
+                    $('#earth img').addClass("pangea-step06");
+                }, 3500);
+            }, 250);
             break;
     };
 });
 
-step.current = 0;
+step.current = 3;

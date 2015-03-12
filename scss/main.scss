@@ -117,6 +117,18 @@ canvas {
     -webkit-transition: 7s ease-in;
 }
 
+#earth img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    -webkit-transition: 3s ease-in;
+    transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -webkit-transition: 3s ease-in;
+}
+
 .earth-step04 {
     -webkit-transform: translate(85%,0);
     -moz-transform: translate(85%,0);
@@ -131,6 +143,19 @@ canvas {
     -o-transform: translate(190%,0);
     -ms-transform: translate(190%,0);
     transform: translate(190%,0);
+}
+
+.earth-step06 {
+    -webkit-transform: translate(85%,10%) scale(1.2,1.2);
+    -moz-transform: translate(85%,10%) scale(1.2,1.2);
+    -o-transform: translate(85%,10%) scale(1.2,1.2);
+    -ms-transform: translate(85%,10%) scale(1.2,1.2);
+    transform: translate(85%,10%) scale(1.2,1.2);
+}
+
+#earth .pangea-step06 {
+    opacity: 1;
+    transform: translate(0%, -2%) scale(1.1,1.1);
 }
 
 .sun-container {
@@ -187,6 +212,14 @@ canvas {
     -o-transform: translate(115%,0);
     -ms-transform: translate(115%,0);
     transform: translate(115%,0);
+}
+
+#sun-container2 .sun-out {
+     -webkit-transform: translate(0%,0);
+    -moz-transform: translate(0%,0);
+    -o-transform: translate(0%,0);
+    -ms-transform: translate(0%,0);
+    transform: translate(0%,0);
 }
 
 #background-container2, #background-container3 {
