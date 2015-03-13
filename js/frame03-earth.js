@@ -281,7 +281,7 @@ function initSurface(containerDiv, meshAmbient, meshDiffuse, meshSpeed, lightAmb
                 ambient: lightAmbient,
                 diffuse: lightDiffuse,
                 count: 1, // Contrast 
-                zOffset: 500,
+                zOffset: 200,
                 xyScalar: 1,
                 speed: 0.001,
                 gravity: 1200,

@@ -39,7 +39,7 @@ watch(step, "current", function() {
             break;
         case 3:
             $('#frame03').css("display", "table");
-            initSurface('', '#ff0000', '#ff0000', 0.002, '#000000', '#ffffff');
+            initSurface('', '#ff0000', '#f7bd00', 0.002, '#ffffff', '#ffffff');
             $('#frame02 .glitch').css("opacity", "0");
             setTimeout( function() {
                 $('#frame02').css("display", "none");
@@ -65,6 +65,7 @@ watch(step, "current", function() {
             break;
         case 5:
             initSurface(3, '#ffe100', '#ffe100', 0.0004, '#666666', '#cacaca');
+            $('#surfaceMagma').css("display", "none");
             $('#sun-container #sun-glow').removeClass("sun-slow");
             $('#sun-container #sun-glow').addClass("sun-fast");
             $('#earth').removeClass("earth-step04");
