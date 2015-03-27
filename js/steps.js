@@ -89,9 +89,36 @@ watch(step, "current", function() {
                 $('#earth').removeClass("earth-step05");
                 $('#earth').addClass("earth-step06");
                 $('#sun-container2 #sun-glow').addClass("sun-out");
+                $('#earth img').addClass("pangea-step06");
+                $('#step06-verses').css("display", "initial");
+                $('#step06-verses').css("top", "5%");
                 setTimeout( function() {
                     $('#sun-container2').css("display", "none");
-                    $('#earth img').addClass("pangea-step06");
+                    $('#step06-verses .glitch').css("opacity", "1");
+                    $( ".glitch" ).on('click touchstart', function () {
+                        step.current = 7;
+                    }); 
+                }, 3500);
+            }, 250);
+            break;
+        case 7:
+            $('#step06-verses .glitch').css("opacity", "0");
+            setTimeout( function() {
+                $('#step06-verses').css("display", "none");
+                $('#earth').removeClass("earth-step06");
+                $('#earth').addClass("earth-step07");
+                $('#frame04').css("display", "initial");
+                setTimeout( function() {
+                    setTimeout( function() {
+                        $('#frame03').css("display", "none");
+                    }, 3500);
+                    $('#frame04').css("opacity", "1");
+                    setTimeout( function() {
+                        $('#frame04 .glitch').css("opacity", "1");
+                    }, 200);
+                    $( "#frame04 .glitch" ).on('click touchstart', function () {
+                        step.current = 8;
+                    });
                 }, 3500);
             }, 250);
             break;

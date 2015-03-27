@@ -192,16 +192,25 @@ canvas {
 }
 
 .earth-step06 {
-    -webkit-transform: translate(85%,10%) scale(1.2,1.2);
-    -moz-transform: translate(85%,10%) scale(1.2,1.2);
-    -o-transform: translate(85%,10%) scale(1.2,1.2);
-    -ms-transform: translate(85%,10%) scale(1.2,1.2);
-    transform: translate(85%,10%) scale(1.2,1.2);
+    -webkit-transform: translate(85%,20%) scale(1.1,1.1);
+    -moz-transform: translate(85%,20%) scale(1.1,1.1);
+    -o-transform: translate(85%,20%) scale(1.1,1.1);
+    -ms-transform: translate(85%,20%) scale(1.1,1.1);
+    transform: translate(85%,20%) scale(1.1,1.1);
+}
+
+.earth-step07 {
+    -webkit-transform: translate(85%,0%) scale(3,3);
+    -moz-transform: translate(85%,0%) scale(3,3);
+    -o-transform: translate(85%,0%) scale(3,3);
+    -ms-transform: translate(85%,0%) scale(3,3);
+    transform: translate(85%,0%) scale(3,3);
+    opacity: 0;
 }
 
 #earth .pangea-step06 {
     opacity: 1;
-    transform: translate(0%, -2%) scale(1.1,1.1);
+    transform: translate(0%, -1%);
 }
 
 .sun-container {
@@ -319,4 +328,44 @@ canvas {
 
 #step05-verses .glitch {
     opacity: 0;
+}
+
+#step06-verses {
+    height: initial;
+    left: 10%;
+    width: 80%;
+    top: 5%;
+    display: none;
+}
+
+#step06-verses .glitch {
+    opacity: 0;
+    margin: initial;
+    max-width: none;
+}
+
+#frame04 {
+  transition: opacity 3.5s ease-in;
+  -moz-transition: opacity 3.5s ease-in;
+  -webkit-transition: opacity 3.5s ease-in;
+}
+
+#frame04 > .glitch-container {
+    background-color: #58B32B;
+}
+
+#frame04 .glitch {
+    color: white;
+}
+
+#frame04 .glitch:before {
+  text-shadow: 0.5px 0 #58B32B;
+  color: white;
+  background: #58B32B;
+}
+
+#frame04 .glitch:after {
+  text-shadow: -0.5px 0 #58B32B;
+  color: white;
+  background: #58B32B;
 }
