@@ -122,7 +122,18 @@ watch(step, "current", function() {
                 }, 3500);
             }, 250);
             break;
+        case 8:
+            $('#frame04 .glitch').css("opacity", "0");
+            setTimeout( function() {
+                $('#frame04').css("display", "none");
+                $('#frame05').css("display", "initial");
+                setTimeout( function() {
+                    $('#frame05').css("opacity", "1");
+                    step.current = 8;
+                }, 3500);
+            }, 250);
+            break;
     };
 });
 
-step.current = 3;
+step.current = 8;

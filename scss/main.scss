@@ -359,13 +359,35 @@ canvas {
 }
 
 #frame04 .glitch:before {
-  text-shadow: 0.5px 0 #58B32B;
-  color: white;
-  background: #58B32B;
+    text-shadow: 0.5px 0 #58B32B;
+    color: white;
+    background: #58B32B;
 }
 
 #frame04 .glitch:after {
-  text-shadow: -0.5px 0 #58B32B;
-  color: white;
-  background: #58B32B;
+    text-shadow: -0.5px 0 #58B32B;
+    color: white;
+    background: #58B32B;
+}
+
+#frame05 #sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    background-color: #4c95ad;
+}
+
+#frame05 #mountainRange {
+    position: absolute;
+    bottom: 31%;
+}
+
+#frame05 #land {
+    position: absolute;
+    width: 100%;
+    height: 31%;
+    bottom: 0;
+    background-color: #39B54A;
 }
