@@ -129,9 +129,26 @@ watch(step, "current", function() {
                 $('#frame05').css("display", "initial");
                 setTimeout( function() {
                     $('#frame05').css("opacity", "1");
-                    step.current = 8;
+                    $('#frame05 .glitch:first').addClass("verse-up");
+                    $('#frame05 .glitch:first').on('click touchstart', function () {
+                        step.current = 9;
+                    });
                 }, 3500);
             }, 250);
+            break;
+        case 9:
+            $('#frame05 .glitch:first').removeClass("verse-up");
+            setTimeout( function() {
+                $('#frame05 div:nth-child(5)').addClass("verse-up");
+                $('#frame05 div:nth-child(5)').on('click touchstart', function () {
+                    step.current = 10;
+                });
+            }, 3000);
+            break;
+        case 10:
+            $('#frame05 #mountainRange').css("bottom", "71%");
+            $('#frame05 #land').css("height", "71%");
+            $('#frame05 div:nth-child(5)').css("top", "100%");
             break;
     };
 });

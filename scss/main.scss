@@ -376,12 +376,13 @@ canvas {
     height: 100%;
     z-index: -1;
     top: 0;
-    background-color: #4c95ad;
+    background-color: #00A8C6;
 }
 
 #frame05 #mountainRange {
     position: absolute;
     bottom: 31%;
+    margin-bottom: -1%;
 }
 
 #frame05 #land {
@@ -389,5 +390,45 @@ canvas {
     width: 100%;
     height: 31%;
     bottom: 0;
-    background-color: #39B54A;
+    background-color: #8FBE00;
+}
+
+#frame05 .glitch {
+    max-width: initial;
+    position: absolute;
+    top: 100%;
+    margin: 0 50px;
+    opacity: 1;
+    color: #fff;
+    z-index: -1;
+    -webkit-transition-property: top, bottom, opacity;
+    -webkit-transition-duration: 3s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-property: top, bottom, opacity;
+    -moz-transition-duration: 3s;
+    -moz-transition-timing-function: ease-out;
+    transition-property: top, bottom, opacity;
+    transition-duration: 3s;
+    transition-timing-function: ease-out;
+}
+
+#frame05 .verse-up {
+    top: 5%;
+}
+
+#frame05 .glitch:after, #frame05 .glitch:before {
+    color: #fff;
+    background: #00A8C6
+}
+
+#frame05 #land {
+    transition: height 3.5s ease-in;
+    -moz-transition: height 3.5s ease-in;
+    -webkit-transition: height 3.5s ease-in;
+}
+
+#frame05 #mountainRange {
+    transition: bottom 3.5s ease-in;
+    -moz-transition: bottom 3.5s ease-in;
+    -webkit-transition: bottom 3.5s ease-in;
 }
