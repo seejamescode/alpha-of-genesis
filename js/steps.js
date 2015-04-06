@@ -123,18 +123,18 @@ watch(step, "current", function() {
             }, 250);
             break;
         case 8:
-            $('#frame04 .glitch').css("opacity", "0");
+            $('#frame05').css("display", "initial");
             setTimeout( function() {
-                $('#frame04').css("display", "none");
-                $('#frame05').css("display", "initial");
+                $('#frame04').css("opacity", "0");
+                $('#frame05').css("opacity", "1");
                 setTimeout( function() {
-                    $('#frame05').css("opacity", "1");
+                    $('#frame04').css("display", "none");
                     $('#frame05 .glitch:first').addClass("verse-up");
                     $('#frame05 .glitch:first').on('click touchstart', function () {
                         step.current = 9;
                     });
                 }, 3500);
-            }, 250);
+            }, 500);
             break;
         case 9:
             $('#frame05 .glitch:first').removeClass("verse-up");
@@ -153,4 +153,4 @@ watch(step, "current", function() {
     };
 });
 
-step.current = 8;
+step.current = 7;
