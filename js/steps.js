@@ -129,28 +129,70 @@ watch(step, "current", function() {
                 $('#frame05').css("opacity", "1");
                 setTimeout( function() {
                     $('#frame04').css("display", "none");
-                    $('#frame05 .glitch:first').addClass("verse-up");
-                    $('#frame05 .glitch:first').on('click touchstart', function () {
+                    $('#frame05 > .glitch:first').addClass("verse-up");
+                    setTimeout( function() {
+                        $('#frame05 > .glitch:first').css("z-index", "2");
+                    }, 3000)
+                    $('#frame05 > .glitch:first').on('click touchstart', function () {
+                        $('#frame05 > .glitch:first').css("z-index", "-1");
                         step.current = 9;
                     });
                 }, 3500);
             }, 500);
             break;
         case 9:
-            $('#frame05 .glitch:first').removeClass("verse-up");
+            $('#frame05 > .glitch:first').removeClass("verse-up");
             setTimeout( function() {
                 $('#frame05 div:nth-child(5)').addClass("verse-up");
+                setTimeout( function() {
+                    $('#frame05 div:nth-child(5)').css("z-index", "2");
+                }, 3000)
                 $('#frame05 div:nth-child(5)').on('click touchstart', function () {
+                    $('#frame05 div:nth-child(5)').css("z-index", "-1");
                     step.current = 10;
                 });
-            }, 3000);
+            }, 1500);
             break;
         case 10:
             $('#frame05 #mountainRange').css("bottom", "71%");
-            $('#frame05 #land').css("height", "71%");
+            $('#frame05 #land').css("top", "29%");
             $('#frame05 div:nth-child(5)').css("top", "100%");
+            $('#frame05 > #land > .glitch:first').css("display", "initial");
+            setTimeout( function() {
+                $('#frame05 > #land > .glitch:first').css("opacity", "1");
+                $('#frame05 > #land > .glitch:first').on('click touchstart', function () {
+                    step.current = 11;
+                });
+            }, 3000);
+            break;
+        case 11:
+            $('#frame05 > #land > .glitch:first').css("opacity", "0");
+            $('#frame05 > #land > .glitch:last').css("display", "initial");
+            setTimeout( function() {
+                $('#frame05 > #land > .glitch:last').css("opacity", "1");
+                $('#frame05 > #land > .glitch:first').css("display", "none");
+                $('#land').prepend('<img src="./images/tree1.svg" />');
+                $('#land').prepend('<img src="./images/tree2.svg" />');
+                $('#land').prepend('<img src="./images/tree3.svg" />');
+                $('#frame05 > #land > .glitch:last').on('click touchstart', function () {
+                    step.current = 12;
+                });
+            }, 1500);
+            break;
+        case 12:
+            $('#frame05 > #land > .glitch:last').css("opacity", "0");
+            $('#frame05 #mountainRange').css("bottom", "29%");
+            $('#frame05 #land').css("top", "71%");
+            $('#frame05 #sky').css("background-color", "#000");   
+            setTimeout( function() {
+                $('#frame05 div:nth-child(6)').addClass("verse-up");
+                $('#frame05 > #land > .glitch:last').css("display", "none");
+                $('#frame05 > #land > .glitch:last').on('click touchstart', function () {
+                    step.current = 13;
+                });
+            }, 1500);
             break;
     };
 });
 
-step.current = 7;
+step.current = 0;

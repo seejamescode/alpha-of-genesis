@@ -388,8 +388,8 @@ canvas {
 #frame05 #land {
     position: absolute;
     width: 100%;
-    height: 31%;
-    bottom: 0;
+    height: 71%;
+    top: 69%;
     background-color: #8FBE00;
 }
 
@@ -412,23 +412,74 @@ canvas {
     transition-timing-function: ease-out;
 }
 
+#frame05 > .glitch {
+    text-align: center;
+    width: 100%;
+}
+
 #frame05 .verse-up {
     top: 5%;
 }
 
-#frame05 .glitch:after, #frame05 .glitch:before {
-    color: #fff;
-    background: #00A8C6
-}
-
 #frame05 #land {
-    transition: height 3.5s ease-in;
-    -moz-transition: height 3.5s ease-in;
-    -webkit-transition: height 3.5s ease-in;
+    transition: all 3.5s ease-in;
+    -moz-transition: all 3.5s ease-in;
+    -webkit-transition: all 3.5s ease-in;
 }
 
 #frame05 #mountainRange {
     transition: bottom 3.5s ease-in;
     -moz-transition: bottom 3.5s ease-in;
     -webkit-transition: bottom 3.5s ease-in;
+}
+
+#frame05 #sky {
+    transition: background-color 2s ease-in;
+    -moz-transition: background-color 2s ease-in;
+    -webkit-transition: background-color 2s ease-in;
+}
+
+
+#frame05 #land img:nth-child(1) {
+    position: absolute;
+    width: 15%;
+    max-height: 32%;
+    left: 5%;
+}
+
+#frame05 #land img:nth-child(2) {
+    position: absolute;
+    width: 30%;
+    max-height: 43%;
+    left: 20%;
+    top: 20%;
+}
+
+#frame05 #land img:nth-child(3) {
+    position: absolute;
+    width: 40%;
+    max-height: 57%;
+    left: 5%;
+    top: 50%;
+}
+
+#frame05 > #land > .glitch {
+    display: none;
+    opacity: 0;
+    top: 0;
+    z-index: 1;
+    left: initial;
+    right: 5%;
+    height: 100%;
+    max-width: 45%;
+    margin: 0;
+    font-size: 2em;
+}
+
+@media (max-width: 800px) {
+
+    #frame05 > #land > .glitch {
+        font-size: 20px;
+    }
+
 }
