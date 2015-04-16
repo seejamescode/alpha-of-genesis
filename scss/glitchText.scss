@@ -16,7 +16,7 @@
 .glitch {
     color: black;
     cursor: pointer; 
-    font-size: 50px;
+    font-size: 2em;
     position: relative;
     margin: 0 auto;
     max-width: 500px; 
@@ -35,14 +35,14 @@
 
 @media (max-width: 800px) {
     .glitch {
-        font-size: 25px;
+        font-size: 1em;
         max-width: 280px;
     }
 }
 
 @media (max-width: 800px) {
     .inverse {
-        font-size: 15px;
+        font-size: 0.8em;
     }
 
     #frame03 .glitch-box {

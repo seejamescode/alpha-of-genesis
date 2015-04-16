@@ -397,7 +397,7 @@ canvas {
     max-width: initial;
     position: absolute;
     top: 100%;
-    margin: 0 50px;
+    width: 100%;
     opacity: 1;
     color: #fff;
     z-index: -1;
@@ -414,11 +414,20 @@ canvas {
 
 #frame05 > .glitch {
     text-align: center;
-    width: 100%;
 }
 
 #frame05 .verse-up {
     top: 5%;
+}
+
+#frame05 .verse-up-night {
+    top: 30%;
+}
+
+@media (max-width: 600px) {
+    #frame05 .verse-up-night {
+        top: 15%;
+    }
 }
 
 #frame05 #land {
@@ -473,13 +482,24 @@ canvas {
     height: 100%;
     max-width: 45%;
     margin: 0;
-    font-size: 2em;
 }
 
-@media (max-width: 800px) {
+#frame05 #sky #night {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 
-    #frame05 > #land > .glitch {
-        font-size: 20px;
-    }
+    transition: opacity 3s ease-in;
+   -moz-transition: opacity 3s ease-in;
+   -webkit-transition: opacity 3s ease-in;
+}
 
+#frame05 #moon {
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    width: 20%;
+    bottom: 0;
+    max-width: 200px;
 }

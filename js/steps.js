@@ -137,7 +137,7 @@ watch(step, "current", function() {
                         $('#frame05 > .glitch:first').css("z-index", "-1");
                         step.current = 9;
                     });
-                }, 3500);
+                }, 2500);
             }, 500);
             break;
         case 9:
@@ -151,7 +151,7 @@ watch(step, "current", function() {
                     $('#frame05 div:nth-child(5)').css("z-index", "-1");
                     step.current = 10;
                 });
-            }, 1500);
+            }, 1000);
             break;
         case 10:
             $('#frame05 #mountainRange').css("bottom", "71%");
@@ -177,22 +177,60 @@ watch(step, "current", function() {
                 $('#frame05 > #land > .glitch:last').on('click touchstart', function () {
                     step.current = 12;
                 });
-            }, 1500);
+            }, 2500);
             break;
         case 12:
             $('#frame05 > #land > .glitch:last').css("opacity", "0");
-            $('#frame05 #mountainRange').css("bottom", "29%");
-            $('#frame05 #land').css("top", "71%");
+            $('#frame05 #mountainRange').css("bottom", "0");
+            $('#frame05 #land').css("top", "101%");
             $('#frame05 #sky').css("background-color", "#000");   
             setTimeout( function() {
                 $('#frame05 div:nth-child(6)').addClass("verse-up");
                 $('#frame05 > #land > .glitch:last').css("display", "none");
-                $('#frame05 > #land > .glitch:last').on('click touchstart', function () {
+                $('#frame05 div:nth-child(6)').on('click touchstart', function () {
                     step.current = 13;
+                });
+            }, 1500);
+            break;
+        case 13:
+            $('#frame05 div:nth-child(6)').removeClass("verse-up");  
+            setTimeout( function() {
+                $('#frame05 div:nth-child(7)').addClass("verse-up-night");
+                $('#frame05 #sky #night').css("opacity", "1");
+                $('#frame05 div:nth-child(6)').css("display", "none");
+                $('#frame05 div:nth-child(7)').on('click touchstart', function () {
+                    step.current = 14;
+                });
+            }, 2500);
+            break;
+        case 14:
+            $('#frame05 div:nth-child(7)').removeClass("verse-up");  
+            setTimeout( function() {
+                $('#frame05 div:nth-child(8)').addClass("verse-up");
+                $('#frame05 div:nth-child(7)').css("display", "none");
+                var curve = new CurveAnimator(
+                    [-10,30], [110,30],
+                    [25,00], [75,00]
+                );
+
+                var o = document.getElementById('moon');
+                o.style.position = 'absolute';
+
+                curve.animate(10, function(point,angle){
+                    o.style.left = point.x+"%";
+                    o.style.top  = point.y+"%";
+                    o.style.transform =
+                    o.style.webkitTransform =
+                    o.style.MozTransform =
+                    "rotate("+angle+"deg)";
+                });
+                $('#frame05 #moon').css("opacity", "1");
+                $('#frame05 div:nth-child(8)').on('click touchstart', function () {
+                    step.current = 15;
                 });
             }, 1500);
             break;
     };
 });
 
-step.current = 0;
+step.current = 7;
