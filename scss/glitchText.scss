@@ -28,9 +28,11 @@
 
 .inverse {
     color: #fff;
-    background-color: #000;
     opacity: 1;
-    font-size: 30px;
+}
+
+#sun-glow .inverse {
+    color: #000;
 }
 
 @media (max-width: 800px) {

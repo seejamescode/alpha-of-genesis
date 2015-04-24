@@ -23,11 +23,11 @@ canvas {
 
 #frame00 {
     opacity: 1;
-    display: initial;
+    display: inline;
 
-    transition: opacity 1s ease-in;
-   -moz-transition: opacity 1s ease-in;
-   -webkit-transition: opacity 1s ease-in;
+    transition: opacity 0.5s ease-in;
+   -moz-transition: opacity 0.5s ease-in;
+   -webkit-transition: opacity 0.5s ease-in;
 }
 
 #frame00 #start {
@@ -51,6 +51,10 @@ canvas {
     z-index: 2;
     width: 100%;
     height: 100%;
+
+    transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -webkit-transition: opacity 0.5s ease-in;
 }
 
 #frame00 #start img {
@@ -65,13 +69,13 @@ canvas {
     z-index: 4;
     opacity: 0.0;
     cursor: pointer;
-    transition: opacity 1s ease-in;
-   -moz-transition: opacity 1s ease-in;
-   -webkit-transition: opacity 1s ease-in; 
+    transition: opacity 0.75s ease-in;
+   -moz-transition: opacity 0.75s ease-in;
+   -webkit-transition: opacity 0.75s ease-in; 
 }
 
 #frame00 #start #logoFill:hover {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 @media (max-width: 600px) {
@@ -254,6 +258,32 @@ canvas {
     transform: translate(-225%,0);
 }
 
+.sun-slow-2 {
+    -webkit-transition: 7s ease-in;
+    transition: 7s ease-in;
+    -moz-transition: 7s ease-in;
+    -webkit-transition: 7s ease-in;
+
+    -webkit-transform: translate(0,-100%);
+    -moz-transform: translate(0,-100%);
+    -o-transform: translate(0,-100%);
+    -ms-transform: translate(0,-100%);
+    transform: translate(0,-100%);
+}
+
+.sun-slow-2-out {
+    -webkit-transition: 3s ease-in;
+    transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -webkit-transition: 3s ease-in;
+
+    -webkit-transform: translate(0, -250%);
+    -moz-transform: translate(0, -250%);
+    -o-transform: translate(0, -250%);
+    -ms-transform: translate(0, -250%);
+    transform: translate(0, -250%);
+}
+
 #sun-container2 #sun-glow {
     width: 25%;
     padding-bottom: 25%;
@@ -277,10 +307,19 @@ canvas {
     transform: translate(0%,0);
 }
 
-#background-container2, #background-container3 {
-    margin: 10%;
-    width: 80.1%;
-    height: 80%;
+#sun-container3 #sun-glow {
+    width: 80%;
+    padding-bottom: 80%;
+    margin-top: 0%;
+    left: 10%;
+    top: 100%;
+}
+
+
+#background-container2, #background-container3, #background-container4 {
+    margin: 9.9%;
+    width: 80.5%;
+    height: 80.5%;
 }
 
 #frame03 .glitch-box {
@@ -299,6 +338,14 @@ canvas {
     top: 45%;
     z-index: 2;
     text-align: center;
+}
+
+#sun-container3 > #sun-glow > .glitch-box {
+    z-index: 10;
+    width: 80%;
+    padding-bottom: 80%;
+    margin-top: 0%;
+    left: 10%;
 }
 
 #sun-glow .glitch-box .glitch {
@@ -354,7 +401,7 @@ canvas {
     background-color: #58B32B;
 }
 
-#frame04 .glitch {
+#frame04 .glitch, #frame06 .glitch {
     color: white;
 }
 
@@ -368,6 +415,10 @@ canvas {
     text-shadow: -0.5px 0 #58B32B;
     color: white;
     background: #58B32B;
+}
+
+#frame05 {
+    z-index: -2;
 }
 
 #frame05 #sky {
@@ -390,11 +441,10 @@ canvas {
     width: 100%;
     height: 71%;
     top: 69%;
-    background-color: #8FBE00;
+    background-color: #59524F;
 }
 
 #frame05 .glitch {
-    max-width: initial;
     position: absolute;
     top: 100%;
     width: 100%;
@@ -414,6 +464,9 @@ canvas {
 
 #frame05 > .glitch {
     text-align: center;
+    width: 90%;
+    padding: 0 5%;
+    max-width: none;
 }
 
 #frame05 .verse-up {
@@ -443,21 +496,23 @@ canvas {
 }
 
 #frame05 #sky {
-    transition: background-color 2s ease-in;
-    -moz-transition: background-color 2s ease-in;
-    -webkit-transition: background-color 2s ease-in;
+    transition: background-color 3s ease-in;
+    -moz-transition: background-color 3s ease-in;
+    -webkit-transition: background-color 3s ease-in;
 }
 
+#frame05 #land img {
+    position: absolute;
+    z-index: 1;
+}
 
 #frame05 #land img:nth-child(1) {
-    position: absolute;
     width: 15%;
     max-height: 32%;
     left: 5%;
 }
 
 #frame05 #land img:nth-child(2) {
-    position: absolute;
     width: 30%;
     max-height: 43%;
     left: 20%;
@@ -465,7 +520,6 @@ canvas {
 }
 
 #frame05 #land img:nth-child(3) {
-    position: absolute;
     width: 40%;
     max-height: 57%;
     left: 5%;
@@ -485,7 +539,6 @@ canvas {
 }
 
 #frame05 #sky #night {
-    opacity: 0;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -495,11 +548,122 @@ canvas {
    -webkit-transition: opacity 3s ease-in;
 }
 
+#frame05 #sky #night .twinkling, #frame05 #sky #night .stars {
+    opacity: 0;
+
+    transition: opacity 3s ease-in;
+    -moz-transition: opacity 3s ease-in;
+    -webkit-transition: opacity 3s ease-in;
+}
+
+#frame05 #sky #night .clouds {
+    transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -webkit-transition: opacity 2s ease-in;    
+
+    transition: filter 3s ease-in;
+    -moz-transition: filter 3s ease-in;
+    -webkit-transition: -webkit-filter 3s ease-in;
+}
+
 #frame05 #moon {
     opacity: 0;
     position: absolute;
     z-index: 3;
     width: 20%;
-    bottom: 0;
+    right: 100%;
     max-width: 200px;
+}
+
+.inverted-colors {
+    -webkit-filter:invert(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1');
+}
+
+#frame05 #sun-glow .glitch-box .glitch {
+    z-index: 11;
+    width: 70%;
+    top: 0;
+    margin-left: 15%;
+    max-width: none;
+    height: 90%;
+    display: inline-block;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#frame05 #sun-glow .glitch-box .glitch span {
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+}
+
+@media (max-width: 800px) {
+    .ready #sun-glow {
+        top: 80% !important;
+    }
+}
+
+@media (max-height: 400px) {
+    .ready #sun-glow {
+        top: 90% !important;
+    }
+}
+
+@media (min-width: 1500px) {
+    #frame05 #sun-glow .glitch-box .glitch span {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+#grass {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    width: 300%;
+    height: 100%;
+    left: -100%;
+    margin-top: 7%;
+    border-radius: 50%;
+    background-color: #10A00B;
+    box-shadow: 0 0 5px 5px #10A00B;
+
+    transition: all 6s ease-in;
+    -moz-transition: all 6s ease-in;
+    -webkit-transition: all 6s ease-in;
+}
+
+#frame06 {
+    background-color: #00A8C6;
+    z-index: -3;
+}
+
+#frame06 #water {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: #004AAB;
+
+    transition: height 7s ease-out;
+    -moz-transition: height 7s ease-out;
+    -webkit-transition: height 7s ease-out;
+}
+
+#frame06 .glitch-container {
+    background-color: transparent;
+}
+
+#frame06 .glitch:before {
+    text-shadow: 0.5px 0 #004AAB;
+    color: white;
+    background: #004AAB;
+}
+
+#frame06 .glitch:after {
+    text-shadow: -0.5px 0 #004AAB;
+    color: white;
+    background: #004AAB;
 }
