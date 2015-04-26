@@ -654,6 +654,7 @@ canvas {
 
 #frame06 .glitch-container {
     background-color: transparent;
+    display: none;
 }
 
 #frame06 .glitch:before {
@@ -666,4 +667,129 @@ canvas {
     text-shadow: -0.5px 0 #004AAB;
     color: white;
     background: #004AAB;
+}
+
+#frame06 > .glitch {
+    display: none;
+    position: absolute;
+    top: 10%;
+    padding: 0 10%;
+    max-width: none;
+    z-index: 2;
+}
+
+#frame06 #fish-1 {
+    position: absolute;
+    width: 50%;
+    right: 100%;
+    top: 30%;
+    z-index: 2;
+
+    -webkit-transition-property: right, width;
+    -webkit-transition-duration: 6s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-property: right, width;
+    -moz-transition-duration: 6s;
+    -moz-transition-timing-function: ease-out;
+    transition-property: right, width;
+    transition-duration: 6s;
+    transition-timing-function: ease-out;
+}
+
+.no-svg .fish-1 {
+    background-image: url(../images/fish-1.png);
+}
+
+.no-svg .fish-2 {
+    background-image: url(../images/fish-2.png);
+}
+
+.no-svg #beach {
+    background-image: url(../images/beach.png);
+}
+
+#frame06 .fish-2 {
+    position: absolute;
+    right: 100%;
+    z-index: 1;
+
+    -webkit-transition-property: right;
+    -webkit-transition-duration: 6s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-property: right;
+    -moz-transition-duration: 6s;
+    -moz-transition-timing-function: ease-out;
+    transition-property: right;
+    transition-duration: 6s;
+    transition-timing-function: ease-out;
+}
+
+#frame06 .fish-2:nth-last-child(3) {
+    top: 75%;
+    height: 20%;
+
+    -webkit-transition-duration: 12s;
+    -moz-transition-duration: 12s;
+    transition-duration: 12s;
+}
+
+#frame06 .fish-2:nth-last-child(4) {
+    top: 45%;
+    height: 30%;
+
+    -webkit-transition-duration: 8s;
+    -moz-transition-duration: 8s;
+    transition-duration: 8s;
+}
+
+#frame06 .fish-2:nth-last-child(5) {
+    top: 10%;
+    height: 15%;
+
+    -webkit-transition-duration: 16s;
+    -moz-transition-duration: 16s;
+    transition-duration: 16s;
+}
+
+#frame06 #beach {
+    position: absolute;
+    height: 100%;
+    left: 100%;
+
+    -webkit-transition-property: left;
+    -webkit-transition-duration: 4s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-property: left;
+    -moz-transition-duration: 4s;
+    -moz-transition-timing-function: ease-out;
+    transition-property: left;
+    transition-duration: 4s;
+    transition-timing-function: ease-out;
+}
+
+#frame06 #extra-land {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 150%;
+    background-color: #8C6239;
+
+    -webkit-transition-property: left;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-property: left;
+    -moz-transition-timing-function: ease-out;
+    transition-property: left;
+    transition-timing-function: ease-out;
+}
+
+.beach-fast {
+    -webkit-transition-duration: 4s;
+    -moz-transition-duration: 4s;
+    transition-duration: 4s;
+}
+
+.beach-slow {
+    -webkit-transition-duration: 10s;
+    -moz-transition-duration: 10s;
+    transition-duration: 10s;
 }

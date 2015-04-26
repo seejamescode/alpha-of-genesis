@@ -77,7 +77,7 @@ watch(step, "current", function() {
                 $('#step05-verses').css("display", "inline");
                 setTimeout( function() {
                     $('#step05-verses .glitch').css("opacity", "1");
-                    $( ".glitch" ).on('click touchstart', function () {
+                    $( "#step05-verses .glitch" ).on('click touchstart', function () {
                         step.current = 6;
                     }); 
                 }, 3500);
@@ -96,7 +96,7 @@ watch(step, "current", function() {
                 setTimeout( function() {
                     $('#sun-container2').css("display", "none");
                     $('#step06-verses .glitch').css("opacity", "1");
-                    $( ".glitch" ).on('click touchstart', function () {
+                    $( "#step06-verses .glitch" ).on('click touchstart', function () {
                         step.current = 7;
                     }); 
                 }, 3500);
@@ -269,18 +269,112 @@ watch(step, "current", function() {
             $('#sun-container3 #sun-glow').addClass("sun-slow-2-out");
             $('#frame05').css("background-color", "transparent");
             $('#frame05 #sky').css("background-color", "transparent");
+            $('#verse19').css("display", "table");
             setTimeout ( function() {
                 $('#frame06 #water').css("height", "100%");
                 setTimeout ( function() {
                     $('#frame05').css("display", "none");
-                    $('#frame06 .glitch').css("opacity", "1");
-                    $('#frame06 .glitch').on('click touchstart', function () {
-                        step.current = 18;
+                    $('#verse19 .glitch').css("opacity", "1");
+                    $('#verse19 .glitch').on('click touchstart', function () {
+                        step.current = 17;
                     });
-                }, 3500);
+                }, 6000);
             }, 500);
+            break;
+        case 17:
+            $('#verse19 .glitch').css("opacity", "0");
+            $('#verse20').css("display", "inline");
+            document.getElementById("fish-1").contentDocument.getElementById("fish1animation").beginElement();
+            setTimeout ( function() {
+                $('#verse19').css("display", "none");
+                $('#frame06 #fish-1').css("right", "25%");
+                $('#verse20').css("opacity", "1");
+                $('#verse20').on('click touchstart', function () {
+                    step.current = 18;
+                });
+            }, 2000);
+            break;
+        case 18:
+            $('#verse20').css("opacity", "0");
+            $('#verse21').css("display", "inline");
+            $('#fish-1').addClass("fish-2");
+            $('#fish-1').removeClass("fish-1");
+            document.getElementById("fish-1").contentDocument.getElementById("fish1animation").endElement();
+            document.getElementById("fish-1").contentDocument.getElementById("fish").setAttribute("fill","#5B7C65");
+            $('#frame06 #fish-1').css("right", "15%");
+            $('#frame06 #fish-1').css("width", "70%");
+            setTimeout( function() {
+                $('#verse21').css("opacity", "1");
+                $('#verse20').css("display", "none");
+                $('#verse21').on('click touchstart', function () {
+                    step.current = 19;
+                });
+            }, 250);
+            break;
+        case 19:
+            $('#verse21 .glitch').css("opacity", "0");
+            $('#verse22').css("display", "inline");
+            setTimeout( function() {
+                setTimeout( function() {
+                    $(".fish-2:nth-last-child(3)").css("right", "-100%");
+                    setTimeout( function() {
+                        $(".fish-2:nth-last-child(5)").css("right", "-100%");
+                        setTimeout( function() {
+                            $(".fish-2:nth-last-child(4)").css("right", "-100%");
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+                $('#verse22').css("opacity", "1");
+                $('#verse21').css("display", "none");
+                $('#verse22').on('click touchstart', function () {
+                    step.current = 20;
+                });
+            }, 250);
+            break;
+        case 20:
+            $('#verse22').css("opacity", "0");
+            $('#verse23').css("display", "inline");
+            $("#beach").css("left", "50%");
+            setTimeout( function() {
+                $("#extra-land").css("left", "75%");
+                document.getElementById("fish-1").contentDocument.getElementById("fish2animation").endElement();
+                $('#verse23').css("opacity", "1");
+                $('#verse22').css("display", "none");
+                $('#verse23').on('click touchstart', function () {
+                    step.current = 21;
+                });
+            }, 1000);
+            break;
+        case 21:
+            $('#verse23').css("opacity", "0");
+            $('#verse24').css("display", "inline");
+            document.getElementById("fish-1").contentDocument.getElementById("fish2to3animation").beginElement();
+            document.getElementById("fish-1").contentDocument.getElementById("fish").setAttribute("fill","#018128");
+            setTimeout( function() {
+                $('#verse24').css("opacity", "1");
+                $('#verse23').css("display", "none");
+                $('#verse24').on('click touchstart', function () {
+                    step.current = 22;
+                });
+            }, 3000);
+            break;
+        case 22:
+            $('#verse24').css("opacity", "0");
+            $('#verse25').css("display", "inline");
+            $('#beach').addClass("beach-slow");
+            $('#beach').removeClass("beach-fast");
+            $("#beach").css("left", "-50%");
+            $("#extra-land").css("left", "0%");
+            document.getElementById("fish-1").contentDocument.getElementById("fish3animation").beginElement();
+            setTimeout( function() {
+                $('#verse25').css("opacity", "1");
+                $('#verse24').css("display", "none");
+                $('#verse25').on('click touchstart', function () {
+                    step.current = 23;
+                });
+            }, 2000);
             break;
     };
 });
 
-step.current = 16;
+step.current = 0;
