@@ -401,7 +401,7 @@ canvas {
     background-color: #58B32B;
 }
 
-#frame04 .glitch, #frame06 .glitch {
+#frame04 .glitch, #frame06 .glitch, #frame07 .glitch {
     color: white;
 }
 
@@ -655,21 +655,22 @@ canvas {
 #frame06 .glitch-container {
     background-color: transparent;
     display: none;
+    z-index: 2;
 }
 
-#frame06 .glitch:before {
+#frame06 .glitch:before, #frame07 .glitch:before {
     text-shadow: 0.5px 0 #004AAB;
     color: white;
     background: #004AAB;
 }
 
-#frame06 .glitch:after {
+#frame06 .glitch:after, #frame07 .glitch:after {
     text-shadow: -0.5px 0 #004AAB;
     color: white;
     background: #004AAB;
 }
 
-#frame06 > .glitch {
+#frame06 > .glitch, #frame07 > .glitch {
     display: none;
     position: absolute;
     top: 10%;
@@ -685,13 +686,13 @@ canvas {
     top: 30%;
     z-index: 2;
 
-    -webkit-transition-property: right, width;
+    -webkit-transition-property: right, top, width;
     -webkit-transition-duration: 6s;
     -webkit-transition-timing-function: ease-out;
-    -moz-transition-property: right, width;
+    -moz-transition-property: right, top, width;
     -moz-transition-duration: 6s;
     -moz-transition-timing-function: ease-out;
-    transition-property: right, width;
+    transition-property: right, top, width;
     transition-duration: 6s;
     transition-timing-function: ease-out;
 }
@@ -706,6 +707,14 @@ canvas {
 
 .no-svg #beach {
     background-image: url(../images/beach.png);
+}
+
+.no-svg #forest {
+    background-image: url(../images/forest.png);
+}
+
+.no-svg #human {
+    background-image: url(../images/humanHead.png);
 }
 
 #frame06 .fish-2 {
@@ -724,7 +733,7 @@ canvas {
     transition-timing-function: ease-out;
 }
 
-#frame06 .fish-2:nth-last-child(3) {
+#frame06 .fish-2:nth-child(14) {
     top: 75%;
     height: 20%;
 
@@ -733,7 +742,7 @@ canvas {
     transition-duration: 12s;
 }
 
-#frame06 .fish-2:nth-last-child(4) {
+#frame06 .fish-2:nth-child(13) {
     top: 45%;
     height: 30%;
 
@@ -742,7 +751,7 @@ canvas {
     transition-duration: 8s;
 }
 
-#frame06 .fish-2:nth-last-child(5) {
+#frame06 .fish-2:nth-child(12) {
     top: 10%;
     height: 15%;
 
@@ -792,4 +801,64 @@ canvas {
     -webkit-transition-duration: 10s;
     -moz-transition-duration: 10s;
     transition-duration: 10s;
+}
+
+#frame06 #forest {
+    position: absolute;
+    width: 100%;
+    top: -100%;
+
+    -webkit-transition-property: top;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 5s;
+    -moz-transition-property: top;
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 5s;
+    transition-property: top;
+    transition-timing-function: ease-out;
+    transition-duration: 5s;
+}
+
+#frame06 #verse26, #frame06 #verse27  {
+    top: initial;
+    bottom: 10%;
+}
+
+#frame06 #human {
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+
+    -webkit-transition-property: opacity;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 5s;
+    -moz-transition-property: opacity;
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 5s;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    transition-duration: 5s;
+}
+
+#frame07 {
+    background-color: #000;
+
+    -webkit-transition-property: opacity;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 5s;
+    -moz-transition-property: opacity;
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 5s;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    transition-duration: 5s;
+}
+
+#frame07 .kaleidoscope .tile .image {
+    -webkit-transition: background-image 0.5s linear;
+    -moz-transition: background-image 0.5s linear;
+    transition: background-image 0.5s linear;
 }
