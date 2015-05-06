@@ -862,3 +862,9 @@ canvas {
     -moz-transition: background-image 0.5s linear;
     transition: background-image 0.5s linear;
 }
+
+#frame07 > .glitch-container {
+    top: 0;
+    background-color: transparent;
+    display: none;
+}

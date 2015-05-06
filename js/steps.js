@@ -450,11 +450,11 @@ watch(step, "current", function() {
         case 25:
             $('#frame00').css("display", "none");
             $('#frame07').css("display", "inline");
-            $('#verse28').css("display", "inline");
+            $('#verse28').css("display", "table");
             setTimeout( function() {
                 $('#frame07').css("opacity", "1");
-                $('#verse28').css("opacity", "1");
-                $('#verse28').on('click touchstart', function () {
+                $('#verse28 .glitch').css("opacity", "1");
+                $('#verse28 .glitch').on('click touchstart', function () {
                     if (step.current === 25) {
                         step.current = 26;
                     };
@@ -462,14 +462,14 @@ watch(step, "current", function() {
             }, 500);
             break;
         case 26:
-            $('#verse28').css("opacity", "0");
-            $('#verse29').css("display", "inline");
+            $('#verse28 .glitch').css("opacity", "0");
+            $('#verse29').css("display", "table");
             $('#frame06').css("display", "none");
             $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('./images/verse29image.jpg')");
             setTimeout( function() {
-                $('#verse28').css("display", "none");
-                $('#verse29').css("opacity", "1");
-                $('#verse29').on('click touchstart', function () {
+                $('#verse28').css("display", "table");
+                $('#verse29 .glitch').css("opacity", "1");
+                $('#verse29 .glitch').on('click touchstart', function () {
                     if (step.current === 26) {
                         step.current = 27;
                     };
@@ -477,13 +477,13 @@ watch(step, "current", function() {
             }, 3000);
             break;
         case 27:
-            $('#verse29').css("opacity", "0");
-            $('#verse30').css("display", "inline");
+            $('#verse29 .glitch').css("opacity", "0");
+            $('#verse30').css("display", "table");
             $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('./images/verse30image.jpg')");
             setTimeout( function() {
-                $('#verse29').css("display", "none");
-                $('#verse30').css("opacity", "1");
-                $('#verse30').on('click touchstart', function () {
+                $('#verse29').css("display", "table");
+                $('#verse30 .glitch').css("opacity", "1");
+                $('#verse30 .glitch').on('click touchstart', function () {
                     if (step.current === 27) {
                         step.current = 28;
                     };
@@ -491,13 +491,13 @@ watch(step, "current", function() {
             }, 3000);
             break;
         case 28:
-            $('#verse30').css("opacity", "0");
-            $('#verse31').css("display", "inline");
+            $('#verse30 .glitch').css("opacity", "0");
+            $('#verse31').css("display", "table");
             $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('./images/verse31image.jpg')");
             setTimeout( function() {
-                $('#verse30').css("display", "none");
-                $('#verse31').css("opacity", "1");
-                $('#verse31').on('click touchstart', function () {
+                $('#verse30').css("display", "table");
+                $('#verse31 .glitch').css("opacity", "1");
+                $('#verse31 .glitch').on('click touchstart', function () {
                     if (step.current === 28) {
                         step.current = 29;
                     };
@@ -507,4 +507,4 @@ watch(step, "current", function() {
     };
 });
 
-step.current = 0;
+step.current = 25;
