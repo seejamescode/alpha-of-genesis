@@ -15,12 +15,14 @@ watch(step, "current", function() {
     switch(step.current) {
         case 0:
             $( "#frame00 #start" ).on('click touchstart', function () {
-                $('#frame00 video').css("opacity", "0");
-                $('#frame00').css("opacity", "0");
-                setTimeout( function() {
-                    $('#frame00').css("display", "none");
-                    step.current = 1;
-                }, 2000);
+                if (step.current === 0) {
+                    $('#frame00 video').css("opacity", "0");
+                    $('#frame00').css("opacity", "0");
+                    setTimeout( function() {
+                        $('#frame00').css("display", "none");
+                        step.current = 1;
+                    }, 2000);
+                };
             });
             break;
         case 1:
@@ -35,7 +37,9 @@ watch(step, "current", function() {
                 $('#frame02 .glitch').css("opacity", "1");
             }, 200);
             $( "#frame02 .glitch" ).on('click touchstart', function () {
-                step.current = 3;
+                if (step.current === 2) {
+                    step.current = 3;
+                };
             });            
             break;
         case 3:
@@ -47,7 +51,9 @@ watch(step, "current", function() {
                 $('#frame03').css("opacity", "1");
             }, 500);
             $( "#frame03 .glitch" ).on('click touchstart', function () {
-                step.current = 4;
+                if (step.current === 3) {
+                    step.current = 4;
+                };
             });  
             break;
         case 4:
@@ -59,10 +65,12 @@ watch(step, "current", function() {
             }, 250);
             $('#earth').addClass("earth-step04");
             $( "#sun-container #sun-glow .glitch" ).on('click touchstart', function () {
-                $('canvas').first().remove();
-                initSurface('', '#555555', '#ffffff', 0.0001, '#00a4ff', '#001eff');
-                step.current = 5;
-            }); 
+                if (step.current === 4) {
+                    $('canvas').first().remove();
+                    initSurface('', '#555555', '#ffffff', 0.0001, '#00a4ff', '#001eff');
+                    step.current = 5;
+                };
+            });
             break;
         case 5:
             initSurface(3, '#ffe100', '#ffe100', 0.0004, '#666666', '#cacaca');
@@ -78,7 +86,9 @@ watch(step, "current", function() {
                 setTimeout( function() {
                     $('#step05-verses .glitch').css("opacity", "1");
                     $( "#step05-verses .glitch" ).on('click touchstart', function () {
-                        step.current = 6;
+                        if (step.current === 5) {
+                            step.current = 6;
+                        };
                     }); 
                 }, 3500);
             }, 3500);
@@ -97,7 +107,9 @@ watch(step, "current", function() {
                     $('#sun-container2').css("display", "none");
                     $('#step06-verses .glitch').css("opacity", "1");
                     $( "#step06-verses .glitch" ).on('click touchstart', function () {
-                        step.current = 7;
+                        if (step.current === 6) {
+                            step.current = 7;
+                        };
                     }); 
                 }, 3500);
             }, 250);
@@ -120,7 +132,9 @@ watch(step, "current", function() {
                     }, 200);
                     $('#frame05').css("display", "inline");
                     $( "#frame04 .glitch" ).on('click touchstart', function () {
-                        step.current = 8;
+                        if (step.current === 7) {
+                            step.current = 8;
+                        };
                     });
                 }, 3500);
             }, 250);
@@ -137,8 +151,10 @@ watch(step, "current", function() {
                     }, 3000)
                 };
                 $('#frame05 > .glitch:first').on('click touchstart', function () {
-                    $('#frame05 > div:nth-child(5)').css("z-index", "-1");
-                    step.current = 9;
+                    if (step.current === 8) {
+                        $('#frame05 > div:nth-child(5)').css("z-index", "-1");
+                        step.current = 9;
+                    };
                 });
             }, 3500);
             break;
@@ -152,8 +168,10 @@ watch(step, "current", function() {
                     }, 3000)
                 };
                 $('#frame05 div:nth-child(6)').on('click touchstart', function () {
-                    $('#frame05 div:nth-child(6)').css("z-index", "-1");
-                    step.current = 10;
+                    if (step.current === 9) {
+                        $('#frame05 div:nth-child(6)').css("z-index", "-1");
+                        step.current = 10;
+                    };
                 });
             }, 1000);
             break;
@@ -167,7 +185,9 @@ watch(step, "current", function() {
                 $('#frame05 > #land > .glitch:first').css("opacity", "1");
                 $('#frame05 #grass').css("margin-top", "5%");
                 $('#frame05 > #land > .glitch:first').on('click touchstart', function () {
-                    step.current = 11;
+                    if (step.current === 10) {
+                        step.current = 11;
+                    };
                 });
             }, 3000);
             break;
@@ -183,7 +203,9 @@ watch(step, "current", function() {
                 $('#land').prepend('<img src="./images/tree3.svg" />');
                 setTimeout( function() {
                     $('#frame05 > #land > .glitch:last').on('click touchstart', function () {
-                        step.current = 12;
+                        if (step.current === 11) {
+                            step.current = 12;
+                        };
                     });
                 }, 1500);
             }, 2500);
@@ -198,7 +220,9 @@ watch(step, "current", function() {
                 $('#frame05 div:nth-child(7)').addClass("verse-up-night");
                 $('#frame05 > #land > .glitch:last').css("display", "none");
                 $('#frame05 div:nth-child(7)').on('click touchstart', function () {
-                    step.current = 13;
+                    if (step.current === 12) {
+                        step.current = 13;
+                    };
                 });
             }, 1500);
             break;
@@ -209,8 +233,10 @@ watch(step, "current", function() {
                 $('#frame05 #sky #night .twinkling').css("opacity", "1");
                 $('#frame05 #sky #night .stars').css("opacity", "1");
                 $('#frame05 div:nth-child(8)').on('click touchstart', function () {
-                    $('#frame05 div:nth-child(7)').css("display", "none");
-                    step.current = 14;
+                    if (step.current === 13) {
+                        $('#frame05 div:nth-child(7)').css("display", "none");
+                        step.current = 14;
+                    };
                 });
             }, 2500);
             break;
@@ -238,8 +264,10 @@ watch(step, "current", function() {
                 });
                 $('#frame05 #moon').css("opacity", "1");
                 $('#frame05 div:nth-child(9)').on('click touchstart', function () {
+                    if (step.current === 14) {
                         $('#frame05 div:nth-child(8)').css("display", "none");
                         step.current = 15;
+                    };
                 });
             }, 1500);
             break;
@@ -257,7 +285,9 @@ watch(step, "current", function() {
                     $('#frame05 div:nth-child(9)').css("display", "none");
                 }, 1500);
                 $('#sun-container3 span').on('click touchstart', function () {
-                    step.current = 16;
+                    if (step.current === 15) {
+                        step.current = 16;
+                    };
                 });
             }, 1500);
             break;
@@ -276,7 +306,9 @@ watch(step, "current", function() {
                     $('#frame05').css("display", "none");
                     $('#verse19 .glitch').css("opacity", "1");
                     $('#verse19 .glitch').on('click touchstart', function () {
-                        step.current = 17;
+                        if (step.current === 16) {
+                            step.current = 17;
+                        };
                     });
                 }, 6000);
             }, 500);
@@ -290,7 +322,9 @@ watch(step, "current", function() {
                 $('#frame06 #fish-1').css("right", "25%");
                 $('#verse20').css("opacity", "1");
                 $('#verse20').on('click touchstart', function () {
-                    step.current = 18;
+                    if (step.current === 17) {
+                        step.current = 18;
+                    };
                 });
             }, 2000);
             break;
@@ -307,7 +341,9 @@ watch(step, "current", function() {
                 $('#verse21').css("opacity", "1");
                 $('#verse20').css("display", "none");
                 $('#verse21').on('click touchstart', function () {
-                    step.current = 19;
+                    if (step.current === 18) {
+                        step.current = 19;
+                    };
                 });
             }, 250);
             break;
@@ -327,7 +363,9 @@ watch(step, "current", function() {
                 $('#verse22').css("opacity", "1");
                 $('#verse21').css("display", "none");
                 $('#verse22').on('click touchstart', function () {
-                    step.current = 20;
+                    if (step.current === 19) {
+                        step.current = 20;
+                    };
                 });
             }, 7000);
             break;
@@ -341,7 +379,9 @@ watch(step, "current", function() {
                 $('#verse23').css("opacity", "1");
                 $('#verse22').css("display", "none");
                 $('#verse23').on('click touchstart', function () {
-                    step.current = 21;
+                    if (step.current === 20) {
+                        step.current = 21;
+                    };
                 });
             }, 1000);
             break;
@@ -354,7 +394,9 @@ watch(step, "current", function() {
                 $('#verse24').css("opacity", "1");
                 $('#verse23').css("display", "none");
                 $('#verse24').on('click touchstart', function () {
-                    step.current = 22;
+                    if (step.current === 21) {
+                        step.current = 22;
+                    };
                 });
             }, 3000);
             break;
@@ -370,7 +412,9 @@ watch(step, "current", function() {
                 $('#verse25').css("opacity", "1");
                 $('#verse24').css("display", "none");
                 $('#verse25').on('click touchstart', function () {
-                    step.current = 23;
+                    if (step.current === 22) {
+                        step.current = 23;
+                    };
                 });
             }, 2000);
             break;
@@ -383,7 +427,9 @@ watch(step, "current", function() {
                 $('#verse26').css("opacity", "1");
                 $('#verse25').css("display", "none");
                 $('#verse26').on('click touchstart', function () {
-                    step.current = 24;
+                    if (step.current === 23) {
+                        step.current = 24;
+                    };
                 });
             }, 5000);
             break;
@@ -395,7 +441,9 @@ watch(step, "current", function() {
                 $('#verse27').css("opacity", "1");
                 $('#verse26').css("display", "none");
                 $('#verse27').on('click touchstart', function () {
-                    step.current = 25;
+                    if (step.current === 24) {
+                        step.current = 25;
+                    };
                 });
             }, 3000);
             break;
@@ -407,7 +455,9 @@ watch(step, "current", function() {
                 $('#frame07').css("opacity", "1");
                 $('#verse28').css("opacity", "1");
                 $('#verse28').on('click touchstart', function () {
-                    step.current = 26;
+                    if (step.current === 25) {
+                        step.current = 26;
+                    };
                 });
             }, 500);
             break;
@@ -415,36 +465,42 @@ watch(step, "current", function() {
             $('#verse28').css("opacity", "0");
             $('#verse29').css("display", "inline");
             $('#frame06').css("display", "none");
-            $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('../images/verse29image.jpg')");
+            $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('./images/verse29image.jpg')");
             setTimeout( function() {
                 $('#verse28').css("display", "none");
                 $('#verse29').css("opacity", "1");
                 $('#verse29').on('click touchstart', function () {
-                    step.current = 27;
+                    if (step.current === 26) {
+                        step.current = 27;
+                    };
                 });
             }, 3000);
             break;
         case 27:
             $('#verse29').css("opacity", "0");
             $('#verse30').css("display", "inline");
-            $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('../images/verse30image.jpg')");
+            $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('./images/verse30image.jpg')");
             setTimeout( function() {
                 $('#verse29').css("display", "none");
                 $('#verse30').css("opacity", "1");
                 $('#verse30').on('click touchstart', function () {
-                    step.current = 28;
+                    if (step.current === 27) {
+                        step.current = 28;
+                    };
                 });
             }, 3000);
             break;
         case 28:
             $('#verse30').css("opacity", "0");
             $('#verse31').css("display", "inline");
-            $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('../images/verse31image.jpg')");
+            $('#frame07 .kaleidoscope .tile .image').css("background-image", "url('./images/verse31image.jpg')");
             setTimeout( function() {
                 $('#verse30').css("display", "none");
                 $('#verse31').css("opacity", "1");
                 $('#verse31').on('click touchstart', function () {
-                    step.current = 29;
+                    if (step.current === 28) {
+                        step.current = 29;
+                    };
                 });
             }, 3000);
             break;
