@@ -213,7 +213,7 @@ watch(step, "current", function() {
         case 12:
             $('#frame05 > #land > .glitch:last').css("opacity", "0");
             $('#frame05 #mountainRange').css("bottom", "0");
-            $('#frame05 #land').css("top", "101%");
+            $('#frame05 #land').addClass("land-move-down");
             $('#frame05 #sky').css("background-color", "#000");
             $('#frame05 #sky #night .clouds').removeClass("inverted-colors");
             setTimeout( function() {
@@ -317,9 +317,11 @@ watch(step, "current", function() {
             $('#verse19 .glitch').css("opacity", "0");
             $('#verse20').css("display", "inline");
             document.getElementById("fish-1").contentDocument.getElementById("fish1animation").beginElement();
+            document.getElementById("fish-1-shadow").contentDocument.getElementById("fish1animation").beginElement();
             setTimeout ( function() {
                 $('#verse19').css("display", "none");
                 $('#frame06 #fish-1').css("right", "25%");
+                $('#frame06 #fish-1-shadow').css("right", "26%");
                 $('#verse20').css("opacity", "1");
                 $('#verse20').on('click touchstart', function () {
                     if (step.current === 17) {
@@ -333,10 +335,15 @@ watch(step, "current", function() {
             $('#verse21').css("display", "inline");
             $('#fish-1').addClass("fish-2");
             $('#fish-1').removeClass("fish-1");
+            $('#fish-1-shadow').addClass("fish-2");
+            $('#fish-1-shadow').removeClass("fish-1");
             document.getElementById("fish-1").contentDocument.getElementById("fish1animation").endElement();
             document.getElementById("fish-1").contentDocument.getElementById("fish").setAttribute("fill","#5B7C65");
+            document.getElementById("fish-1-shadow").contentDocument.getElementById("fish1animation").endElement();
             $('#frame06 #fish-1').css("right", "15%");
             $('#frame06 #fish-1').css("width", "70%");
+            $('#frame06 #fish-1-shadow').css("right", "15.5%");
+            $('#frame06 #fish-1-shadow').css("width", "70%");
             setTimeout( function() {
                 $('#verse21').css("opacity", "1");
                 $('#verse20').css("display", "none");
@@ -350,11 +357,11 @@ watch(step, "current", function() {
         case 19:
             $('#verse21').css("opacity", "0");
             setTimeout( function() {
-                $(".fish-2:nth-child(14)").css("right", "-100%");
+                $(".fish-2:nth-child(15)").css("right", "-100%");
                 setTimeout( function() {
-                    $(".fish-2:nth-child(12)").css("right", "-100%");
+                    $(".fish-2:nth-child(13)").css("right", "-100%");
                     setTimeout( function() {
-                        $(".fish-2:nth-child(13)").css("right", "-100%");
+                        $(".fish-2:nth-child(14)").css("right", "-100%");
                         $('#verse22').css("display", "inline");
                     }, 1000);
                 }, 1000);
@@ -377,6 +384,7 @@ watch(step, "current", function() {
             setTimeout( function() {
                 $("#extra-land").css("left", "75%");
                 document.getElementById("fish-1").contentDocument.getElementById("fish2animation").endElement();
+                document.getElementById("fish-1-shadow").contentDocument.getElementById("fish2animation").endElement();
                 $('#verse23').css("opacity", "1");
                 $('#verse22').css("display", "none");
                 $('#verse23').on('click touchstart', function () {
@@ -390,6 +398,7 @@ watch(step, "current", function() {
             $('#verse23').css("opacity", "0");
             $('#verse24').css("display", "inline");
             document.getElementById("fish-1").contentDocument.getElementById("fish2to3animation").beginElement();
+            document.getElementById("fish-1-shadow").contentDocument.getElementById("fish2to3animation").beginElement();
             document.getElementById("fish-1").contentDocument.getElementById("fish").setAttribute("fill","#018128");
             setTimeout( function() {
                 $('#verse24').css("opacity", "1");
@@ -408,7 +417,9 @@ watch(step, "current", function() {
             $('#beach').removeClass("beach-fast");
             $("#beach").css("left", "-50%");
             $("#extra-land").css("left", "0%");
+            $('#frame06 #fish-1-shadow').css("opacity", "0.5");
             document.getElementById("fish-1").contentDocument.getElementById("fish3animation").beginElement();
+            document.getElementById("fish-1-shadow").contentDocument.getElementById("fish3animation").beginElement();
             setTimeout( function() {
                 $('#verse25').css("opacity", "1");
                 $('#verse24').css("display", "none");
@@ -422,7 +433,12 @@ watch(step, "current", function() {
         case 23:
             $('#verse25').css("opacity", "0");
             $('#verse26').css("display", "inline");
-            $('#frame06 #fish-1').css("top", "100%");
+            $('#frame06 #fish-1').css("top", "101%");
+            $('#frame06 #fish-1').css("right", "30%");
+            $('#frame06 #fish-1').css("width", "40%");
+            $('#frame06 #fish-1-shadow').css("top", "100%");
+            $('#frame06 #fish-1-shadow').css("right", "30.5%");
+            $('#frame06 #fish-1-shadow').css("width", "40%");
             $('#frame06 #forest').css("top", "0%");
             setTimeout( function() {
                 $('#verse26').css("opacity", "1");
@@ -508,4 +524,4 @@ watch(step, "current", function() {
     };
 });
 
-step.current = 7;
+step.current = 0;

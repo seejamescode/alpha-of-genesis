@@ -317,9 +317,10 @@ canvas {
 
 
 #background-container2, #background-container3, #background-container4 {
-    margin: 9.9%;
     width: 80.5%;
     height: 80.5%;
+    margin-left: 9.75%;
+    margin-top: 9.75%;
 }
 
 #frame03 .glitch-box {
@@ -442,6 +443,19 @@ canvas {
     height: 71%;
     top: 69%;
     background-color: #59524F;
+}
+
+.land-move-down {
+    -webkit-transform: translate(0, 101%);
+    -moz-transform: translate(0, 101%);
+    -o-transform: translate(0, 101%);
+    -ms-transform: translate(0, 101%);
+    transform: translate(0, 101%);
+
+    -webkit-transition: 3.5s ease-in;
+    -moz-transition: 3.5s ease-in;
+    -o-transition: 3.5s ease-in;
+    transition: 3.5s ease-in;
 }
 
 #frame05 .glitch {
@@ -734,7 +748,7 @@ canvas {
     z-index: 2;
 }
 
-#frame06 #fish-1 {
+#frame06 #fish-1, #frame06 #fish-1-shadow {
     position: absolute;
     width: 50%;
     right: 100%;
@@ -742,14 +756,23 @@ canvas {
     z-index: 2;
 
     -webkit-transition-property: right, top, width;
-    -webkit-transition-duration: 6s;
+    -webkit-transition-duration: 5s;
     -webkit-transition-timing-function: ease-out;
     -moz-transition-property: right, top, width;
-    -moz-transition-duration: 6s;
+    -moz-transition-duration: 5s;
     -moz-transition-timing-function: ease-out;
     transition-property: right, top, width;
-    transition-duration: 6s;
+    transition-duration: 5s;
     transition-timing-function: ease-out;
+}
+
+#frame06 #fish-1-shadow {
+    top: 29%;
+    opacity: 0;
+
+    -webkit-transition: opacity 2s;
+    -moz-transition: opacity 2s;
+    transition: opacity 2s;
 }
 
 .no-svg .fish-1 {
@@ -788,7 +811,7 @@ canvas {
     transition-timing-function: ease-out;
 }
 
-#frame06 .fish-2:nth-child(14) {
+#frame06 .fish-2:nth-child(15) {
     top: 75%;
     height: 20%;
     opacity: 0.6;
@@ -798,7 +821,7 @@ canvas {
     transition-duration: 12s;
 }
 
-#frame06 .fish-2:nth-child(13) {
+#frame06 .fish-2:nth-child(14) {
     top: 45%;
     height: 30%;
     opacity: 0.8;
@@ -808,7 +831,7 @@ canvas {
     transition-duration: 8s;
 }
 
-#frame06 .fish-2:nth-child(12) {
+#frame06 .fish-2:nth-child(13) {
     top: 10%;
     height: 15%;
     opacity: 0.4;
