@@ -301,7 +301,7 @@ watch(step, "current", function() {
             $('#frame05 #sky').css("background-color", "transparent");
             $('#verse19').css("display", "table");
             setTimeout ( function() {
-                $('#frame06 #water').css("height", "100%");
+                $('#frame06 #water').css("height", "calc(100% - 50px)");
                 setTimeout ( function() {
                     $('#frame05').css("display", "none");
                     $('#verse19 .glitch').css("opacity", "1");
@@ -373,6 +373,7 @@ watch(step, "current", function() {
             $('#verse22').css("opacity", "0");
             $('#verse23').css("display", "inline");
             $("#beach").css("left", "50%");
+            $('#frame06 #water').css("height", "100%");
             setTimeout( function() {
                 $("#extra-land").css("left", "75%");
                 document.getElementById("fish-1").contentDocument.getElementById("fish2animation").endElement();
@@ -507,4 +508,4 @@ watch(step, "current", function() {
     };
 });
 
-step.current = 25;
+step.current = 7;

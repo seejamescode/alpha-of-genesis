@@ -134,10 +134,10 @@ canvas {
 }
 
 #earth #surfaceMagma {
-    width: 101%;
-    height: 101%;
-    margin-left: -0.5%;
-    margin-top: -0.5%;
+    width: 104.4%;
+    height: 104.4%;
+    margin-left: -2.2%;
+    margin-top: -2.2%;
     opacity: 1;
     -webkit-animation: rotating 120s linear infinite;
     -moz-animation: rotating 120s linear infinite;
@@ -629,6 +629,9 @@ canvas {
     border-radius: 50%;
     background-color: #10A00B;
     box-shadow: 0 0 5px 5px #10A00B;
+    background-size: 5%;
+    background-repeat:repeat;
+    background-image: url('../images/grass.svg');
 
     transition: all 6s ease-in;
     -moz-transition: all 6s ease-in;
@@ -640,6 +643,38 @@ canvas {
     z-index: -3;
 }
 
+@keyframes waves {
+  from {
+    background-position: 0 102%
+  }
+  50% {
+    background-position: 50% bottom
+  }
+  to {
+    background-position: 98% 102%
+  }
+}
+
+@-moz-keyframes waves {
+  from {
+    background-position: 0 102%
+  }
+  50% {
+    background-position: 50% bottom
+  }
+  to {
+    background-position: 98% 102%
+  }
+}
+
+@-webkit-keyframes waves {
+  from {
+    background-position: 0 102%
+  }
+  to {
+    background-position: 98% 102%
+  }
+}
 #frame06 #water {
     position: absolute;
     height: 0;
@@ -647,9 +682,29 @@ canvas {
     bottom: 0;
     background-color: #004AAB;
 
-    transition: height 7s ease-out;
-    -moz-transition: height 7s ease-out;
-    -webkit-transition: height 7s ease-out;
+    transition: height 7s linear;
+    -moz-transition: height 7s linear;
+    -webkit-transition: height 7s linear;
+}
+
+#frame06 #water > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#frame06 #water #waves {
+    position: absolute;
+    height: 50px;
+    bottom: 100%;
+    width: 100%;
+    background: url(../images/water.png) repeat-x bottom;
+    animation: waves 20s linear infinite;
+    -moz-animation: waves 20s linear infinite;
+    -webkit-animation: waves 20s linear infinite;
+    -webkit-animation-direction: reverse;
+    -moz-animation-direction: reverse;
+    animation-direction: reverse;
 }
 
 #frame06 .glitch-container {
@@ -736,6 +791,7 @@ canvas {
 #frame06 .fish-2:nth-child(14) {
     top: 75%;
     height: 20%;
+    opacity: 0.6;
 
     -webkit-transition-duration: 12s;
     -moz-transition-duration: 12s;
@@ -745,6 +801,7 @@ canvas {
 #frame06 .fish-2:nth-child(13) {
     top: 45%;
     height: 30%;
+    opacity: 0.8;
 
     -webkit-transition-duration: 8s;
     -moz-transition-duration: 8s;
@@ -754,6 +811,7 @@ canvas {
 #frame06 .fish-2:nth-child(12) {
     top: 10%;
     height: 15%;
+    opacity: 0.4;
 
     -webkit-transition-duration: 16s;
     -moz-transition-duration: 16s;
