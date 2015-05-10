@@ -146,6 +146,12 @@ canvas {
     animation: rotating 120s linear infinite;
 }
 
+#earth #surfaceWater {
+    width: 115%;
+    height: 115%;
+    margin: -7.5% 0 0 -7.5%;
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
     -ms-transform: rotate(0deg);
@@ -352,6 +358,7 @@ canvas {
 #sun-glow .glitch-box .glitch {
     color: initial;
     background-color: initial;
+    opacity: 0;
 }
 
 .background-container {
@@ -769,10 +776,12 @@ canvas {
 #frame06 #fish-1-shadow {
     top: 29%;
     opacity: 0;
+}
 
-    -webkit-transition: opacity 2s;
-    -moz-transition: opacity 2s;
-    transition: opacity 2s;
+#frame06 .shadow-animation-1 {
+    -webkit-transition: opacity 2s !important;
+    -moz-transition: opacity 2s !important;
+    transition: opacity 2s !important;
 }
 
 .no-svg .fish-1 {

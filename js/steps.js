@@ -64,13 +64,17 @@ watch(step, "current", function() {
                 $('#frame03 > .glitch-box').css("display", "none");
             }, 250);
             $('#earth').addClass("earth-step04");
-            $( "#sun-container #sun-glow .glitch" ).on('click touchstart', function () {
-                if (step.current === 4) {
-                    $('canvas').first().remove();
-                    initSurface('', '#555555', '#ffffff', 0.0001, '#00a4ff', '#001eff');
-                    step.current = 5;
-                };
-            });
+            setTimeout( function() {
+                $('#sun-glow .glitch-box .glitch').css("opacity", "1");
+                $( "#sun-container #sun-glow .glitch" ).on('click touchstart', function () {
+                    if (step.current === 4) {
+                        $('canvas').first().remove();
+                        initSurface('', '#555555', '#ffffff', 0.0001, '#00a4ff', '#001eff');
+                        $('#frame03 #earth #surfaceWater').css("opacity", "1");
+                        step.current = 5;
+                    };
+                });
+            }, 7000)
             break;
         case 5:
             initSurface(3, '#ffe100', '#ffe100', 0.0004, '#666666', '#cacaca');
@@ -421,6 +425,7 @@ watch(step, "current", function() {
             document.getElementById("fish-1").contentDocument.getElementById("fish3animation").beginElement();
             document.getElementById("fish-1-shadow").contentDocument.getElementById("fish3animation").beginElement();
             setTimeout( function() {
+                $('#frame06 #fish-1-shadow').removeClass("shadow-animation-1");
                 $('#verse25').css("opacity", "1");
                 $('#verse24').css("display", "none");
                 $('#verse25').on('click touchstart', function () {
@@ -433,7 +438,7 @@ watch(step, "current", function() {
         case 23:
             $('#verse25').css("opacity", "0");
             $('#verse26').css("display", "inline");
-            $('#frame06 #fish-1').css("top", "101%");
+            $('#frame06 #fish-1').css("top", "100%");
             $('#frame06 #fish-1').css("right", "30%");
             $('#frame06 #fish-1').css("width", "40%");
             $('#frame06 #fish-1-shadow').css("top", "100%");
@@ -524,4 +529,4 @@ watch(step, "current", function() {
     };
 });
 
-step.current = 0;
+step.current = 7;
