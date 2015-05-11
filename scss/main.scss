@@ -1,3 +1,8 @@
+html {
+    height: 100%;
+    width: 100%;  
+}
+
 body, #container {
     height: 100%;
     width: 100%;
@@ -34,7 +39,6 @@ canvas {
     display: initial;
     position: absolute;
     text-align: center;
-    background-color: #fff;
     left: calc(50% - 250px);
     top: calc(50% - 250px);
     width: 500px;
@@ -51,31 +55,38 @@ canvas {
     z-index: 2;
     width: 100%;
     height: 100%;
-
-    transition: opacity 0.5s ease-in;
-    -moz-transition: opacity 0.5s ease-in;
-    -webkit-transition: opacity 0.5s ease-in;
 }
 
-#frame00 #start img {
+#frame00 #start img, #frame00 #start object, #frame00 #start svg {
+    display: inline-block;
+    overflow-y: auto;
     position: absolute;
     left: 0;
     z-index: 3;
+    width: 102%;
+    height: 102%;
+    margin: -1% 0 0 -1%;
+}
+
+#frame00 #start img {
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
 #frame00 #start #logoFill {
     z-index: 4;
-    opacity: 0.0;
-    cursor: pointer;
-    transition: opacity 0.75s ease-in;
-   -moz-transition: opacity 0.75s ease-in;
-   -webkit-transition: opacity 0.75s ease-in; 
 }
 
-#frame00 #start #logoFill:hover {
-    opacity: 0.5;
+#frame00 #warning-animations {
+    color: #fff;
+    text-align: center;
+    top: 10%;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    z-index: 5;
+    display: none;
 }
 
 @media (max-width: 600px) {
@@ -93,14 +104,59 @@ canvas {
 
 }
 
-#frame03 {
+#frame00 > #about-button {
+    color: #FFF;
+    font-size: 3em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 0.5em;
+    padding-bottom: 0.3em;
+    cursor: pointer;
+}
+
+#frame00 > #about-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    background-color: #296C89;
+    z-index: 5;
+    opacity: 0;
+    display: none;
+    overflow-y: auto;
+
+    transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+}
+
+#frame00 > #about-modal > span {
+    position: absolute;
+    margin: 10%;
+}
+
+#frame00 > #about-modal a {
+    color: inherit; /* blue colors for links too */
+}
+
+#frame00 > #about-modal > #exit {
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    font-size: 2em;
+    margin: 0;
+    padding: 0.5em;
+}
+
+#frame02 {
+    z-index: 2;
+}
+
+#frame03, .frame02-fade {
    transition: opacity 2s ease-in;
    -moz-transition: opacity 2s ease-in;
    -webkit-transition: opacity 2s ease-in;
-}
-
-#frame03 .frame {
-    display: table;
 }
 
 #earth-container {
@@ -121,7 +177,7 @@ canvas {
     -webkit-transition: 7s ease-in;
 }
 
-#earth img {
+#earth img, #earth #surfacePangea, #earth #surfaceMagma {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -134,6 +190,7 @@ canvas {
 }
 
 #earth #surfaceMagma {
+    display: none;
     width: 104.4%;
     height: 104.4%;
     margin-left: -2.2%;
@@ -219,7 +276,7 @@ canvas {
 }
 
 #earth .pangea-step06 {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translate(0%, -1%);
 }
 
@@ -362,8 +419,9 @@ canvas {
 }
 
 .background-container {
-    width: 100%;
-    height: 100%;
+    width: 98.5%;
+    height: 98.5%;
+    margin: 0.75% 0 0 0.75%;
     position: absolute;
 }
 
@@ -400,9 +458,17 @@ canvas {
 }
 
 #frame04, #frame05 {
-  transition: opacity 3.5s ease-in;
-  -moz-transition: opacity 3.5s ease-in;
-  -webkit-transition: opacity 3.5s ease-in;
+    transition: opacity 3.5s ease-in;
+    -moz-transition: opacity 3.5s ease-in;
+    -webkit-transition: opacity 3.5s ease-in;
+}
+
+#frame04 {
+    z-index: 3;
+}
+
+#frame05 {
+    z-index: 2;
 }
 
 #frame04 > .glitch-container {
@@ -425,15 +491,11 @@ canvas {
     background: #58B32B;
 }
 
-#frame05 {
-    z-index: -2;
-}
-
 #frame05 #sky {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     background-color: #00A8C6;
 }
@@ -442,6 +504,7 @@ canvas {
     position: absolute;
     bottom: 31%;
     margin-bottom: -1%;
+    z-index: 2;
 }
 
 #frame05 #land {
@@ -449,6 +512,7 @@ canvas {
     width: 100%;
     height: 71%;
     top: 69%;
+    z-index: 2;
     background-color: #59524F;
 }
 
@@ -471,7 +535,7 @@ canvas {
     width: 100%;
     opacity: 1;
     color: #fff;
-    z-index: -1;
+    z-index: 1;
     -webkit-transition-property: top, bottom, opacity;
     -webkit-transition-duration: 3s;
     -webkit-transition-timing-function: ease-out;
@@ -661,7 +725,6 @@ canvas {
 
 #frame06 {
     background-color: #00A8C6;
-    z-index: -3;
 }
 
 @keyframes waves {
@@ -698,14 +761,15 @@ canvas {
 }
 #frame06 #water {
     position: absolute;
-    height: 0;
+    height: 100%;
+    max-height: 0;
     width: 100%;
     bottom: 0;
     background-color: #004AAB;
 
-    transition: height 7s linear;
-    -moz-transition: height 7s linear;
-    -webkit-transition: height 7s linear;
+    transition: max-height 7s linear;
+    -moz-transition: max-height 7s linear;
+    -webkit-transition: max-height 7s linear;
 }
 
 #frame06 #water > div {
@@ -910,7 +974,7 @@ canvas {
 }
 
 #frame06 #verse26, #frame06 #verse27  {
-    top: initial;
+    top: auto;
     bottom: 10%;
 }
 
@@ -947,14 +1011,64 @@ canvas {
     transition-duration: 5s;
 }
 
-#frame07 .kaleidoscope .tile .image {
-    -webkit-transition: background-image 0.5s linear;
-    -moz-transition: background-image 0.5s linear;
-    transition: background-image 0.5s linear;
+#frame07 #kal1 .tile .image {
+    background-image:url("../images/verse28image.jpg");
 }
 
-#frame07 > .glitch-container {
-    top: 0;
-    background-color: transparent;
+#frame07 #kal2 .tile .image {
+    background-image:url("../images/verse29image.jpg");
+}
+
+#frame07 #kal3 .tile .image {
+    background-image:url("../images/verse30image.jpg");
+}
+
+#frame07 #kal4 .tile .image {
+    background-image:url("../images/verse31image.jpg");
+}
+
+#frame07 .kaleidoscope {
     display: none;
+    opacity: 0;
+
+    transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -webkit-transition: opacity 2s ease-in;
+}
+
+#frame07 .kaleidoscope .glitch-container {
+    background: transparent;
+    z-index: 2;
+    display: none;
+}
+
+#frame08 {
+    transition: opacity 5s ease-in;
+    -moz-transition: opacity 5s ease-in;
+    -webkit-transition: opacity 5s ease-in;
+}
+
+#frame08 .glitch-container {
+    background-color: #000;
+}
+
+#frame08 .glitch {
+    color: #fff;
+    text-align: center;
+}
+#frame08 .glitch h1 {
+    font-size: 1.5em;
+}
+
+#frame08 .glitch h1 a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+#frame08 .glitch h1:hover, #frame00 > #about-button:hover {
+    color: #296C89;
+
+    transition: color 0.75s ease-in;
+    -moz-transition: color 0.75s ease-in;
+    -webkit-transition: color 0.75s ease-in;
 }

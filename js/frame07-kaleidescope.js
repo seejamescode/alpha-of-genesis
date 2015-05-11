@@ -36,6 +36,10 @@ $( document ).ready( function () {
     .addClass( 'n' + n )
     .append( tiles );
 
+  if ($kaleidescope.is("#kal2")) {
+    s = 10;
+  };
+
   var $image = $kaleidescope.find( '.image' );
 
   var $fullscreen = $( '#fullscreen' );

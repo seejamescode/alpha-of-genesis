@@ -4,6 +4,20 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Alpha of Genesis</title>
+        <meta name="Description" content="Experience the first chapter of Genesis in a whole new way." />
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+        <meta property="og:url"                content="http://www.alphaofgenesis.com" />
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Alpha of Genesis" />
+        <meta property="og:description"        content="Experience the first chapter of Genesis in a whole new way." />
+        <meta property="og:image"              content="http://alphaofgenesis.com/images/AoGpreview.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Alpha of Genesis">
+        <meta name="twitter:description" content="Experience the first chapter of Genesis in a whole new way.">
+        <meta name="twitter:image" content="http://alphaofgenesis.com/images/AoGpreview.jpg">
+
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/glitchText.css">
@@ -24,13 +38,44 @@
         <div id="container">
             <div id ="frame00" class="frame">
                 <div id="start">
+                    <img id="mobilePoster" src="images/bgVideoPoster.jpg">
+                    <object id="logo" type="image/svg+xml" data="images/Alpha-of-Genesis-Logo-transparentBlackOutside.svg">
+                    </object>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:#296C89;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;opacity:0;transition: opacity 0.75s ease-in;-moz-transition: opacity 0.75s ease-in;-webkit-transition: opacity 0.75s ease-in;}
+                            .st0:hover{cursor:pointer;opacity:0.75;}
+                        </style>
+                        <path id="blueFill" class="st0" d="M243.4,27.7L27.7,243.4c-3.6,3.6-3.6,9.6,0,13.2l215.7,215.7c3.6,3.6,9.6,3.6,13.2,0
+                            l215.7-215.7c3.6-3.6,3.6-9.6,0-13.2L256.6,27.7C253,24.1,247,24.1,243.4,27.7z"/>
+                    </svg>
+
                     <video autoplay loop poster="images/bgVideoPoster.jpg">
                         <source src="images/bgVideo.webm" type="video/webm">
                         <source src="images/bgVideo.mp4" type="video/mp4">
                     </video>
-                    <img id="mobilePoster" src="images/bgVideoPoster.jpg">
-                    <img id="logo" src="images/Alpha-of-Genesis-Logo-transparentBlackOutside.svg">
-                    <img id="logoFill" src="images/Alpha-of-Genesis-Logo-transparentBlackOutsideFill.svg">
+                </div>
+                <p id="warning-animations">IMPORTANT: To experience all of the animations, switch to a more advanced browser like the latest <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>.</p>
+                <div id="about-button">
+                    ?
+                </div>
+                <div id="about-modal">
+                    <span id="exit">X</span>
+                    <span>
+                        <h1>What</h1>
+                        Alpha of Genesis is a web project that has the user experience the first chapter of Genesis while different visuals (including scientific theories) accompany the text.
+                        <h1>Why</h1>
+                        I had three goals out of this project:
+                        <br>
+                        - To help people read the first chapter of the Bible who had previously felt too intimidated to try
+                        <br>
+                        - To bend the misconception that a believer either exclusively chooses faith or science
+                        <br>
+                        - To just make something beautiful for God
+                        <h1>Who</h1>
+                        <h3>Created by James Y. Rauhut</h3>
+                        <a href="http://www.seejamescode.com" target="_blank">seejamescode.com</a>
+                    </span>
                 </div>
             </div>
             <div id="frame01">
@@ -53,8 +98,10 @@
                         <div id="background-container" class="background-container">
                             <div id="background-output" class="background-output"></div>
                         </div>
-                        <img id="surfaceMagma" src="images/magmaEarth.svg">
-                        <img id="surfacePangea" src="images/pangea.svg">
+                        <object id="surfaceMagma" type="image/svg+xml" data="images/magmaEarth.svg">
+                        </object>
+                        <object id="surfacePangea" type="image/svg+xml" data="images/pangea.svg">
+                        </object>
                     </div>
                 </div>
 
@@ -131,7 +178,8 @@
                         <div class="twinkling"></div>
                         <div class="clouds inverted-colors"></div>
                     </div>
-                    <img id="moon" src="images/moon.svg" width="100%">
+                    <object id="moon" type="image/svg+xml" data="images/moon.svg" width="100%">
+                    </object>
                 </div>
                 <div id="sun-container3" class="sun-container">
                     <div id="sun-glow">
@@ -242,34 +290,52 @@
             </div>
 
             <div id="frame07" class="frame">
-                <div class="kaleidoscope">
+                <div id="kal1" class="kaleidoscope">
+                    <div id="verse28" class="glitch-container">
+                        <div class="glitch-box">
+                            <div class="glitch displayNone">
+                                <span>And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="kal2" class="kaleidoscope">
+                    <div id="verse29" class="glitch-container">
+                        <div class="glitch-box">
+                            <div class="glitch displayNone">
+                                <span>And God said, Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree, in the which is the fruit of a tree yielding seed; to you it shall be for meat.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="kal3" class="kaleidoscope">
+                    <div id="verse30" class="glitch-container">
+                        <div class="glitch-box">
+                            <div class="glitch displayNone">
+                                <span>And to every beast of the earth, and to every fowl of the air, and to every thing that creepeth upon the earth, wherein there is life, I have given every green herb for meat: and it was so.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="kal4" class="kaleidoscope">
+                    <div id="verse31" class="glitch-container">
+                        <div class="glitch-box">
+                            <div class="glitch displayNone">
+                                <span>And God saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <script src="js/frame07-kaleidescope.js"></script>
-                <div id="verse28" class="glitch-container">
+            </div>
+            <div id="frame08" class="frame">
+                <div class="glitch-container">
                     <div class="glitch-box">
                         <div class="glitch displayNone">
-                            <span>And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.</span>
-                        </div>
-                    </div>
-                </div>
-                <div id="verse29" class="glitch-container">
-                    <div class="glitch-box">
-                        <div class="glitch displayNone">
-                            <span>And God said, Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree, in the which is the fruit of a tree yielding seed; to you it shall be for meat.</span>
-                        </div>
-                    </div>
-                </div>
-                <div id="verse30" class="glitch-container">
-                    <div class="glitch-box">
-                        <div class="glitch displayNone">
-                            <span>And to every beast of the earth, and to every fowl of the air, and to every thing that creepeth upon the earth, wherein there is life, I have given every green herb for meat: and it was so.</span>
-                        </div>
-                    </div>
-                </div>
-                <div id="verse31" class="glitch-container">
-                    <div class="glitch-box">
-                        <div class="glitch displayNone">
-                            <span>And God saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.</span>
+                            <h1><a href="https://www.bible.com/bible/1/gen.2.kjv" target="_blank">Read Next Chapter</a></h1>
+                            <h1><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falphaofgenesis.com" target="_blank">Share On Facebook</a></h1>
+                            <h1><a href="http://www.twitter.com/share?url=http://www.alphaofgenesis.com/" target="_blank">Share On Twitter</a></h1>
+                            <h1><a href="javascript:history.go(0)">Go Again</a></h1>
                         </div>
                     </div>
                 </div>
