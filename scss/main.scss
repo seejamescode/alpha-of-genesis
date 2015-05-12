@@ -729,34 +729,28 @@ canvas {
 
 @keyframes waves {
   from {
-    background-position: 0 102%
-  }
-  50% {
-    background-position: 50% bottom
+    background-position: 0 100%
   }
   to {
-    background-position: 98% 102%
+    background-position: 276px 100%
   }
 }
 
 @-moz-keyframes waves {
   from {
-    background-position: 0 102%
-  }
-  50% {
-    background-position: 50% bottom
+    background-position: 0 100%
   }
   to {
-    background-position: 98% 102%
+    background-position: 276px 100%
   }
 }
 
 @-webkit-keyframes waves {
   from {
-    background-position: 0 102%
+    background-position: 0 100%
   }
   to {
-    background-position: 98% 102%
+    background-position: 276px 100%
   }
 }
 #frame06 #water {
@@ -784,9 +778,9 @@ canvas {
     bottom: 100%;
     width: 100%;
     background: url(../images/water.png) repeat-x bottom;
-    animation: waves 20s linear infinite;
-    -moz-animation: waves 20s linear infinite;
-    -webkit-animation: waves 20s linear infinite;
+    animation: waves 3s linear infinite;
+    -moz-animation: waves 3s linear infinite;
+    -webkit-animation: waves 3s linear infinite;
     -webkit-animation-direction: reverse;
     -moz-animation-direction: reverse;
     animation-direction: reverse;
@@ -981,6 +975,7 @@ canvas {
 #frame06 #human {
     opacity: 0;
     height: 100%;
+    max-width: 100%;
     position: absolute;
     left: 0;
     margin: 0 auto;
@@ -1056,16 +1051,14 @@ canvas {
     color: #fff;
     text-align: center;
 }
-#frame08 .glitch h1 {
+
+#frame08 .glitch a {
+    color: #FFF;
+    text-decoration: none !important;
     font-size: 1.5em;
 }
 
-#frame08 .glitch h1 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
-}
-
-#frame08 .glitch h1:hover, #frame00 > #about-button:hover {
+#frame08 .glitch a:hover, #frame00 > #about-button:hover {
     color: #296C89;
 
     transition: color 0.75s ease-in;

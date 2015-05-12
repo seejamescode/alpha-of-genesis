@@ -3,16 +3,37 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
         <title>Alpha of Genesis</title>
         <meta name="Description" content="Experience the first chapter of Genesis in a whole new way." />
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
+        <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+        <link rel="manifest" href="images/icons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Facebook Sharing -->
         <meta property="og:url"                content="http://www.alphaofgenesis.com" />
         <meta property="og:type"               content="website" />
         <meta property="og:title"              content="Alpha of Genesis" />
         <meta property="og:description"        content="Experience the first chapter of Genesis in a whole new way." />
         <meta property="og:image"              content="http://alphaofgenesis.com/images/AoGpreview.jpg" />
 
+        <!-- Twitter Sharing -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Alpha of Genesis">
         <meta name="twitter:description" content="Experience the first chapter of Genesis in a whole new way.">
@@ -33,6 +54,16 @@
         <script src="js/watch.js"></script>
         <script src="js/fss.js"></script>
         <script src="js/curve-animator.js"></script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-43808769-5', 'auto');
+            ga('send', 'pageview');
+        </script>
     </head>
     <body>
         <div id="container">
@@ -63,18 +94,18 @@
                     <span id="exit">X</span>
                     <span>
                         <h1>What</h1>
-                        Alpha of Genesis is a web project that has the user experience the first chapter of Genesis while different visuals (including scientific theories) accompany the text.
+                        Alpha of Genesis is a web project that has the user experience the first chapter of Genesis while different visuals accompany the text. The visuals are an unique interpretation of the poetic scripture.
                         <h1>Why</h1>
                         I had three goals out of this project:
                         <br>
-                        - To help people read the first chapter of the Bible who had previously felt too intimidated to try
+                        - To help people read the first chapter of the Bible who have previously felt too intimidated
                         <br>
                         - To bend the misconception that a believer either exclusively chooses faith or science
                         <br>
                         - To just make something beautiful for God
                         <h1>Who</h1>
                         <h3>Created by James Y. Rauhut</h3>
-                        <a href="http://www.seejamescode.com" target="_blank">seejamescode.com</a>
+                        <a id="linkPortfolio" href="http://www.seejamescode.com" target="_blank">seejamescode.com</a>
                     </span>
                 </div>
             </div>
@@ -332,10 +363,13 @@
                 <div class="glitch-container">
                     <div class="glitch-box">
                         <div class="glitch displayNone">
-                            <h1><a href="https://www.bible.com/bible/1/gen.2.kjv" target="_blank">Read Next Chapter</a></h1>
-                            <h1><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falphaofgenesis.com" target="_blank">Share On Facebook</a></h1>
-                            <h1><a href="http://www.twitter.com/share?url=http://www.alphaofgenesis.com/" target="_blank">Share On Twitter</a></h1>
-                            <h1><a href="javascript:history.go(0)">Go Again</a></h1>
+                            <a id="linkChapter2" href="https://www.bible.com/bible/1/gen.2.kjv" target="_blank">Read Next Chapter</a>
+                            <br>
+                            <a id="linkFacebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falphaofgenesis.com" target="_blank">Share On Facebook</a>
+                            <br>
+                            <a id="linkTwitter" href="http://www.twitter.com/share?url=http://www.alphaofgenesis.com/&hashtags=AlphaofGenesis" target="_blank">Share On Twitter</a>
+                            <br>
+                            <a id="linkRestart" href=".">Go Again</a>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ Modernizr.addTest('isiOS', function(){
     return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
 });
 
-//usage
+// Check video and animation functionality
 if (Modernizr.isiOS) {
     $('#frame00 #start video').css("display", "none");
 };
@@ -13,6 +13,27 @@ if (Modernizr.isiOS) {
 if (!Modernizr.smil) {
     $('#frame00 #warning-animations').css("display", "inline-block");
 };
+
+// Analytics for external links
+$( "#linkPortfolio" ).click(function() {
+    ga('send', 'event', 'Link', 'Portfolio', 'Links');
+});
+
+$( "#linkChapter2" ).click(function() {
+    ga('send', 'event', 'Link', 'Chapter 2', 'Links');
+});
+
+$( "#linkFacebook" ).click(function() {
+    ga('send', 'event', 'Link', 'Facebook', 'Links');
+});
+
+$( "#linkTwitter" ).click(function() {
+    ga('send', 'event', 'Link', 'Twitter', 'Links');
+});
+
+$( "#linkRestart" ).click(function() {
+    ga('send', 'event', 'Link', 'Restart', 'Links');
+});
 
 watch(step, "current", function() {
     console.log("Changed step to " + step.current);
@@ -40,6 +61,7 @@ watch(step, "current", function() {
                     $('#frame00').css("opacity", "0");
                     setTimeout( function() {
                         $('#frame00').css("display", "none");
+                        ga('send', 'event', 'Verse', '1', 'Verses');
                         step.current = 1;
                     }, 2000);
                 };
@@ -58,6 +80,7 @@ watch(step, "current", function() {
             }, 200);
             $( "#frame02 .glitch" ).on('click touchstart', function () {
                 if (step.current === 2) {
+                    ga('send', 'event', 'Verse', '2', 'Verses');
                     step.current = 3;
                 };
             });            
@@ -76,6 +99,7 @@ watch(step, "current", function() {
             }, 2000);
             $( "#frame03 .glitch" ).on('click touchstart', function () {
                 if (step.current === 3) {
+                    ga('send', 'event', 'Verse', '3', 'Verses');
                     step.current = 4;
                 };
             });  
@@ -95,6 +119,7 @@ watch(step, "current", function() {
                         $('canvas').first().remove();
                         initSurface('', '#555555', '#ffffff', 0.0001, '#00a4ff', '#001eff');
                         $('#frame03 #earth #surfaceWater').css("opacity", "1");
+                        ga('send', 'event', 'Verse', '4 & 5', 'Verses');
                         step.current = 5;
                     };
                 });
@@ -115,6 +140,7 @@ watch(step, "current", function() {
                     $('#step05-verses .glitch').css("opacity", "1");
                     $( "#step05-verses .glitch" ).on('click touchstart', function () {
                         if (step.current === 5) {
+                            ga('send', 'event', 'Verse', '6 & 7', 'Verses');
                             step.current = 6;
                         };
                     }); 
@@ -136,6 +162,7 @@ watch(step, "current", function() {
                     $('#step06-verses .glitch').css("opacity", "1");
                     $( "#step06-verses .glitch" ).on('click touchstart', function () {
                         if (step.current === 6) {
+                            ga('send', 'event', 'Verse', '8', 'Verses');
                             step.current = 7;
                         };
                     }); 
@@ -161,6 +188,7 @@ watch(step, "current", function() {
                     $( "#frame04 .glitch" ).on('click touchstart', function () {
                         if (step.current === 7) {
                             $('#frame05').css("display", "inline-block");
+                            ga('send', 'event', 'Verse', '9', 'Verses');
                             step.current = 8;
                         };
                     });
@@ -180,6 +208,7 @@ watch(step, "current", function() {
                 };
                 $('#frame05 > .glitch:first').on('click touchstart', function () {
                     if (step.current === 8) {
+                        ga('send', 'event', 'Verse', '10', 'Verses');
                         step.current = 9;
                     };
                 });
@@ -196,6 +225,7 @@ watch(step, "current", function() {
                 };
                 $('#frame05 div:nth-child(6)').on('click touchstart', function () {
                     if (step.current === 9) {
+                        ga('send', 'event', 'Verse', '11', 'Verses');
                         step.current = 10;
                     };
                 });
@@ -212,6 +242,7 @@ watch(step, "current", function() {
                 $('#frame05 #grass').css("margin-top", "5%");
                 $('#frame05 > #land > .glitch:first').on('click touchstart', function () {
                     if (step.current === 10) {
+                        ga('send', 'event', 'Verse', '12', 'Verses');
                         step.current = 11;
                     };
                 });
@@ -230,6 +261,7 @@ watch(step, "current", function() {
                 setTimeout( function() {
                     $('#frame05 > #land > .glitch:last').on('click touchstart', function () {
                         if (step.current === 11) {
+                            ga('send', 'event', 'Verse', '13', 'Verses');
                             step.current = 12;
                         };
                     });
@@ -247,6 +279,7 @@ watch(step, "current", function() {
                 $('#frame05 > #land > .glitch:last').css("display", "none");
                 $('#frame05 div:nth-child(7)').on('click touchstart', function () {
                     if (step.current === 12) {
+                        ga('send', 'event', 'Verse', '14 & 15', 'Verses');
                         step.current = 13;
                     };
                 });
@@ -261,6 +294,7 @@ watch(step, "current", function() {
                 $('#frame05 div:nth-child(8)').on('click touchstart', function () {
                     if (step.current === 13) {
                         $('#frame05 div:nth-child(7)').css("display", "none");
+                        ga('send', 'event', 'Verse', '16', 'Verses');
                         step.current = 14;
                     };
                 });
@@ -292,6 +326,7 @@ watch(step, "current", function() {
                 $('#frame05 div:nth-child(9)').on('click touchstart', function () {
                     if (step.current === 14) {
                         $('#frame05 div:nth-child(8)').css("display", "none");
+                        ga('send', 'event', 'Verse', '17 & 18', 'Verses');
                         step.current = 15;
                     };
                 });
@@ -313,6 +348,7 @@ watch(step, "current", function() {
                 }, 1500);
                 $('#sun-container3 span').on('click touchstart', function () {
                     if (step.current === 15) {
+                        ga('send', 'event', 'Verse', '19', 'Verses');
                         step.current = 16;
                     };
                 });
@@ -338,6 +374,7 @@ watch(step, "current", function() {
                     $('#verse19 .glitch').css("opacity", "1");
                     $('#verse19 .glitch').on('click touchstart', function () {
                         if (step.current === 16) {
+                            ga('send', 'event', 'Verse', '20', 'Verses');
                             step.current = 17;
                         };
                     });
@@ -358,6 +395,7 @@ watch(step, "current", function() {
                 $('#verse20').css("opacity", "1");
                 $('#verse20').on('click touchstart', function () {
                     if (step.current === 17) {
+                        ga('send', 'event', 'Verse', '21', 'Verses');
                         step.current = 18;
                     };
                 });
@@ -384,6 +422,7 @@ watch(step, "current", function() {
                 $('#verse20').css("display", "none");
                 $('#verse21').on('click touchstart', function () {
                     if (step.current === 18) {
+                        ga('send', 'event', 'Verse', '22', 'Verses');
                         step.current = 19;
                     };
                 });
@@ -406,6 +445,7 @@ watch(step, "current", function() {
                 $('#verse21').css("display", "none");
                 $('#verse22').on('click touchstart', function () {
                     if (step.current === 19) {
+                        ga('send', 'event', 'Verse', '23', 'Verses');
                         step.current = 20;
                     };
                 });
@@ -415,7 +455,7 @@ watch(step, "current", function() {
             $('#verse22').css("opacity", "0");
             $('#verse23').css("display", "inline-block");
             $("#beach").css("left", "50%");
-            $('#frame06 #water').css("height", "100%");
+            $('#frame06 #water').css("max-height", "100%");
             setTimeout( function() {
                 $("#extra-land").css("left", "75%");
                 if (Modernizr.smil) {
@@ -426,6 +466,7 @@ watch(step, "current", function() {
                 $('#verse22').css("display", "none");
                 $('#verse23').on('click touchstart', function () {
                     if (step.current === 20) {
+                        ga('send', 'event', 'Verse', '24', 'Verses');
                         step.current = 21;
                     };
                 });
@@ -444,6 +485,7 @@ watch(step, "current", function() {
                 $('#verse23').css("display", "none");
                 $('#verse24').on('click touchstart', function () {
                     if (step.current === 21) {
+                        ga('send', 'event', 'Verse', '25', 'Verses');
                         step.current = 22;
                     };
                 });
@@ -467,6 +509,7 @@ watch(step, "current", function() {
                 $('#verse24').css("display", "none");
                 $('#verse25').on('click touchstart', function () {
                     if (step.current === 22) {
+                        ga('send', 'event', 'Verse', '26', 'Verses');
                         step.current = 23;
                     };
                 });
@@ -487,6 +530,7 @@ watch(step, "current", function() {
                 $('#verse25').css("display", "none");
                 $('#verse26').on('click touchstart', function () {
                     if (step.current === 23) {
+                        ga('send', 'event', 'Verse', '27', 'Verses');
                         step.current = 24;
                     };
                 });
@@ -501,6 +545,7 @@ watch(step, "current", function() {
                 $('#verse26').css("display", "none");
                 $('#verse27').on('click touchstart', function () {
                     if (step.current === 24) {
+                        ga('send', 'event', 'Verse', '28', 'Verses');
                         step.current = 25;
                     };
                 });
@@ -517,6 +562,7 @@ watch(step, "current", function() {
                 $('#verse28 .glitch').css("opacity", "1");
                 $('#verse28 .glitch').on('click touchstart', function () {
                     if (step.current === 25) {
+                        ga('send', 'event', 'Verse', '29', 'Verses');
                         step.current = 26;
                     };
                 });
@@ -536,6 +582,7 @@ watch(step, "current", function() {
                 $('#verse29 .glitch').css("opacity", "1");
                 $('#verse29 .glitch').on('click touchstart', function () {
                     if (step.current === 26) {
+                        ga('send', 'event', 'Verse', '30', 'Verses');
                         step.current = 27;
                     };
                 });
@@ -554,6 +601,7 @@ watch(step, "current", function() {
                 $('#verse30 .glitch').css("opacity", "1");
                 $('#verse30 .glitch').on('click touchstart', function () {
                     if (step.current === 27) {
+                        ga('send', 'event', 'Verse', '31', 'Verses');
                         step.current = 28;
                     };
                 });
@@ -572,6 +620,7 @@ watch(step, "current", function() {
                 $('#verse31 .glitch').css("opacity", "1");
                 $('#verse31 .glitch').on('click touchstart', function () {
                     if (step.current === 28) {
+                        ga('send', 'event', 'Verse', 'End', 'Verses');
                         step.current = 29;
                     };
                 });
